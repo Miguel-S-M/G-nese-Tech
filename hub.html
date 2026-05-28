@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gênese Tech - Hub Principal</title>
+    <link rel="stylesheet" href="hub.css">
+</head>
+<body>
+
+    <header class="menu-superior">
+        <div class="logo-reduzida glitch" data-text="G_T">G_T</div>
+        <nav>
+            <ul class="nav-lista">
+                <li><a href="#intro" class="nav-link">Início</a></li>
+                <li><a href="#hub-modulos" class="nav-link">Especialidades</a></li>
+                <li><a href="representantes" class="nav-link"> Representantes </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro" class="secao-hero">
+            <div class="container-titulo">
+                <h1 id="titulo-principal">Gênese Tech</h1>
+                <p class="subtitulo-efeito">Inovação, Segurança & Hardware</p>
+            </div>
+        </section>
+
+        <section id="hub-modulos" class="secao-hub">
+            <div class="linha-decorativa"></div>
+            
+            <div class="grid-monolitos">
+
+                <a href="cyber-seguranca.html" class="cartao-monolito">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80" alt="Cyber Segurança" class="cartao-img-fundo">
+                    <div class="borda-efeito"></div>
+                    <div class="numero-id">// 01</div>
+                    <div class="conteudo-card">
+                        <h2 class="titulo-card">Cyber Segurança</h2>
+                        <p class="descricao-card">Explore vulnerabilidades e defesas em um ambiente controlado de simulação.</p>
+                    </div>
+                </a>
+
+                <a href="historia-computacao.html" class="cartao-monolito">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&auto=format&fit=crop&q=60" alt="História da Computação" class="cartao-img-fundo">
+                    <div class="borda-efeito"></div>
+                    <div class="numero-id">// 02</div>
+                    <div class="conteudo-card">
+                        <h2 class="titulo-card">História da Computação</h2>
+                        <p class="descricao-card">A evolução dos sistemas computacionais, desde as válvulas até o silício.</p>
+                    </div>
+                </a>
+
+                <a href="montar-pc.html" class="cartao-monolito">
+                    <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500&auto=format&fit=crop&q=60" alt="Montagem de PC" class="cartao-img-fundo">
+                    <div class="borda-efeito"></div>
+                    <div class="numero-id">// 03</div>
+                    <div class="conteudo-card">
+                        <h2 class="titulo-card">Montagem de PC</h2>
+                        <p class="descricao-card">Domine a arquitetura física e aprenda a montar setups do zero com segurança.</p>
+                    </div>
+                </a>
+
+                <a href="pecas-computador.html" class="cartao-monolito">
+                    <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=500&auto=format&fit=crop&q=60" alt="Peças & Hardware" class="cartao-img-fundo">
+                    <div class="borda-efeito"></div>
+                    <div class="numero-id">// 04</div>
+                    <div class="conteudo-card">
+                        <h2 class="titulo-card">Peças & Hardware</h2>
+                        <p class="descricao-card">Análise detalhada de componentes para perfis empresariais e de alto desempenho.</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <section class="secao-depoimentos">
+    <div class="linha-decorativa"></div>
+    <h2 class="titulo-card" style="text-align: center; margin-bottom: 40px;">Depoimentos</h2>
+
+    <!-- Sistema de Controle por Rádio Oculto -->
+    <input type="radio" name="depoimento-controle" id="depoimento-1" checked>
+    <input type="radio" name="depoimento-controle" id="depoimento-2">
+    <input type="radio" name="depoimento-controle" id="depoimento-3">
+
+    <!-- Container dos Cartões -->
+    <div class="slider-depoimentos">
+        
+        <!-- Cartão 1 -->
+        <div class="cartao-depoimento item-1">
+            <p class="texto-depoimento">"O sistema de cibersegurança desenvolvido pela Gênese Tech superou nossas expectativas. A simulação de vulnerabilidades é extremamente realista."</p>
+            <h3 class="autor-depoimento">// Carlos Silva, CTO TechGuard</h3>
+        </div>
+
+        <!-- Cartão 2 -->
+        <div class="cartao-depoimento item-2">
+            <p class="texto-depoimento">"O guia de montagem de computadores e a análise de hardware ajudaram nossa equipe técnica a otimizar o setup de toda a empresa."</p>
+            <h3 class="autor-depoimento">// Mariana Costa, Diretora de Infra</h3>
+        </div>
+
+        <!-- Cartão 3 -->
+        <div class="cartao-depoimento item-3">
+            <p class="texto-depoimento">"Interface facil, rápida e com uma identidade visual intuitiva fantástica. Passa muita autoridade técnica!"</p>
+            <h3 class="autor-depoimento">// André Souza, Dev Fullstack</h3>
+        </div>
+
+    </div>
+
+    <!-- Navegação por Bolinhas -->
+    <div class="navegacao-css">
+        <label for="depoimento-1" class="botao-nav" id="label-1"></label>
+        <label for="depoimento-2" class="botao-nav" id="label-2"></label>
+        <label for="depoimento-3" class="botao-nav" id="label-3"></label>
+    </div>
+</section>
+    </main>
+
+    <script src="hub.js"></script>
+</body>
+</html>
