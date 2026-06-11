@@ -2,18 +2,60 @@
 <html lang="pt">
 <head>
     <link rel="stylesheet" href="firewall.css">
-    <link rel="icon" href="firewall,png">
+    <link rel="icon" href="firewall.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FireWall</title>
 </head>
 <body>
     <header>
-        <p style="float: right; margin-right: 20px;">
-            <a href="cyber-seguranca.html" >Voltar ao início</a>s
+        <p>
+            <a href="cyber-seguranca.html" >Voltar ao início</a>
         </p>
     </header>
-    <main></main>
+    <h1 class="fireh1">Firewall </h1>
+    <img src="fireh1.png">
+    <main>
+        <p>Um firewall é uma barreira de segurança digital que monitora e controla
+             o tráfego de rede (entradas e saídas) com base em regras predefinidas.
+              Ele atua como um "porteiro", decidindo quais dados são autorizados a
+               passar e bloqueando ameaças ou acessos não autorizados entre redes confiáveis e não confiáveis.</p>
+               <h2>
+                1 Tipos de Implementação
+               </h2>
+               <img src="firetipos.png">
+               <article>
+                <ul>
+                    <li><em>Hardware</em>: Dispositivo físico instalado entre a rede e a conexão com a internet.
+                         Muito utilizado em ambientes corporativos por oferecer alto desempenho e segurança robusta.</li>
+                    <li><em>Software</em>: Programas instalados diretamente no computador ou dispositivo (como o Firewall do Windows),
+                         protegendo apenas o equipamento individual.</li>
+                    <li><em>Híbrido (Appliance)</em>: Combinação de equipamentos físicos e softwares de proteção.</li>
+                </u>
+               </article>
+               <h2>2 Formas de Funcionamento</h2>
+               <img src="fireformas.png">
+               <article>
+                <ul>
+                    <li><em>Filtragem de Pacotes</em>: Analisa os pacotes de dados isoladamente com base em endereços IP de origem e destino,
+                         portas e protocolos.</li>
+                    <li><em>Inspeção de Estado (Stateful)</em>: Monitora o contexto e o estado da conexão ativa, verificando se o pacote é uma resposta
+                         legítima a uma solicitação anterior.</li>
+                    <li><em>Proxy (Nível de Aplicação)</em>: Intermedeia a comunicação diretamente entre a sua rede e a internet, mascarando a origem e protegendo
+                         contra ataques focados em aplicações específicas.</li>
+                </ul>
+               </article>
+               <h2>3 Limitações</h2>
+               <img src="firepreso.png">
+               <p>Apesar de ser essencial para a segurança da informação, o firewall possui restrições e não deve ser confundido com um antivírus:</p>
+               <article>
+                <ul>
+                    <li><em>Ameaças internas</em>: Não protege contra ataques cuja origem e destino estão dentro da própria rede interna.</li>
+                    <li><em>Erros humanos</em>: É ineficaz contra engenharia social (como senhas fracas ou usuários que clicam em links maliciosos voluntariamente).</li>
+                    <li><em>Malwares em arquivos</em>: O firewall foca no tráfego de comunicação, enquanto a busca e remoção de vírus internos continuam sendo responsabilidade do antivírus.</li>
+                </ul>
+               </article>
+    </main>
     <footer></footer>
 </body>
 </html>
