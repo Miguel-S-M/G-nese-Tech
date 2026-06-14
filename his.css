@@ -1,0 +1,423 @@
+/* ==========================================================================
+   CONFIGURAÇÕES BASE
+   ========================================================================== */
+   html {
+    scroll-behavior: smooth;
+}
+   body { 
+    background-color: #ffffff;
+   }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #080a0f;
+    color: #e2e8f0;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   MENU SUPERIOR
+   ========================================================================== */
+.menu-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px;
+    background-color: rgba(8, 10, 15, 0.9);
+    border-bottom: 1px solid #1e293b;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-reduzida {
+    font-size: 2.7rem;
+    font-weight: bold;
+    color: #1a231a; 
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: color 0.3s ease, text-shadow 0.3s ease; 
+}
+
+/* Combinando Neon + Glitch na Logo */
+.logo-reduzida:hover {
+    color: #ffffff; 
+    text-shadow: 
+        0 0 4px #ffffff,        
+        0 0 10px #ff0000,       
+        0 0 20px #ff0000,       
+        0 0 40px #ff0000;
+}
+
+.nav-lista {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ff0000;
+}
+
+/* ==========================================================================
+   EFEITO GLITCH / INTERFERÊNCIA CIBERNÉTICA
+   ========================================================================== */
+.glitch {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #080a0f; 
+    clip: rect(0, 0, 0, 0); 
+}
+
+.glitch:hover::before {
+    left: -2px;
+    text-shadow: 2px 0 #ff0055;
+    animation: glitch-anim-1 0.46s infinite linear alternate-reverse;
+}
+
+.glitch:hover::after {
+    left: 2px;
+    text-shadow: -2px 0 #00f2fe;
+    animation: glitch-anim-2 0.33s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+    0% { clip-path: inset(40% 0 61% 0); }
+    20% { clip-path: inset(92% 0 1% 0); }
+    40% { clip-path: inset(5% 0 85% 0); }
+    60% { clip-path: inset(57% 0 27% 0); }
+    80% { clip-path: inset(15% 0 80% 0); }
+    100% { clip-path: inset(80% 0 5% 0); }
+}
+
+@keyframes glitch-anim-2 {
+    0% { clip-path: inset(25% 0 58% 0); }
+    22% { clip-path: inset(84% 0 3% 0); }
+    39% { clip-path: inset(11% 0 76% 0); }
+    61% { clip-path: inset(70% 0 15% 0); }
+    82% { clip-path: inset(43% 0 43% 0); }
+    100% { clip-path: inset(5% 0 88% 0); }
+}
+
+/* ==========================================================================
+   SEÇÃO HERO (INTRODUÇÃO)
+   ========================================================================== */
+.secao-hero {
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.container-titulo {
+    text-align: center;
+}
+
+#titulo-principal {
+    font-size: 4.5rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    opacity: 0; 
+    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.5s ease;
+}
+
+.titulo-animado {
+    opacity: 1 !important;
+    transform: scale(1.1);
+}
+
+.subtitulo-efeito {
+    color: #64748b;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+}
+
+/* ==========================================================================
+   HUB DE CARTÕES (PROPORÇÃO VERTICAL A4)
+   ========================================================================== */
+.secao-hub {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 40px 20px 120px 20px;
+}
+
+.linha-decorativa {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ff0000, transparent);
+    margin-bottom: 60px;
+}
+
+.grid-monolitos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+}
+
+.cartao-monolito {
+    background-color: #0f131a;
+    aspect-ratio: 1 / 1.4142; 
+    border: 1px solid #1e293b;
+    border-radius: 4px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s, border-color 0.4s;
+}
+
+.cartao-monolito:hover {
+    transform: translateY(-12px);
+    background-color: #141a24;
+    border-color: rgba(138, 3, 3, 0.3);
+}
+
+/* Controle da Imagem de Fundo do Cartão */
+.cartao-img-fundo {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.85; 
+    transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s ease;
+}
+
+/* Quando passa o mouse, a imagem escurece e vai para o fundo para dar leitura ao texto */
+.cartao-monolito:hover class.cartao-img-fundo,
+.cartao-monolito:hover .cartao-img-fundo {
+    opacity: 0.15;
+    filter: blur(2px);
+    transform: scale(1.05);
+}
+
+.borda-efeito {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #ff0000;
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    z-index: 2;
+}
+
+.cartao-monolito:hover .borda-efeito {
+    transform: scaleX(1);
+}
+
+.numero-id {
+    color: #ff0000;
+    font-size: 0.9rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    transition: color 0.2s ease;
+    z-index: 2;
+}
+
+.cartao-monolito:hover .numero-id {
+    animation: marcador-hack 0.3s infinite steps(2);
+    color: #ffffff; 
+}
+
+.conteudo-card {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
+    z-index: 2;
+}
+
+.cartao-monolito:hover .conteudo-card {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.titulo-card {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.descricao-card {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   EFEITO DE HACK NO MARCADOR SUPERIOR (// 01)
+   ========================================================================== */
+@keyframes marcador-hack {
+    0% {
+        transform: translate(0, 0);
+        filter: hue-rotate(0deg);
+        opacity: 1;
+    }
+    25% {
+        transform: translate(-3px, 1px); 
+        filter: hue-rotate(90deg); 
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(2px, -1px); 
+        filter: hue-rotate(180deg); 
+        opacity: 0.5; 
+    }
+    75% {
+        transform: translate(-1px, -2px);
+        filter: hue-rotate(270deg);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(0, 0);
+        filter: hue-rotate(360deg);
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   DEPOIMENTOS
+   ========================================================================== */
+.secao-depoimentos {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* Esconde as caixas de seleção padrão do navegador */
+input[name="depoimento-controle"] {
+    display: none;
+}
+
+.slider-depoimentos {
+    width: 100%;
+    min-height: 220px;
+    position: relative;
+}
+
+/* Configuração padrão de todos os cartões (Começam invisíveis) */
+.cartao-depoimento {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0f131a;
+    border: 1px solid #1e293b;
+    padding: 40px;
+    border-radius: 4px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, border-color 0.4s;
+}
+
+.texto-depoimento {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e2e8f0;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.autor-depoimento {
+    color: #fd0000;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#depoimento-1:checked ~ .slider-depoimentos .item-1,
+#depoimento-2:checked ~ .slider-depoimentos .item-2,
+#depoimento-3:checked ~ .slider-depoimentos .item-3 {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    border-color: #ff0000;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.1);
+}
+
+/* Área de navegação das bolinhas */
+.navegacao-css {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Estilo básico das bolinhas de navegação */
+.botao-nav {
+    width: 12px;
+    height: 12px;
+    background-color: #1e293b;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.botao-nav:hover {
+    background-color: rgba(255, 0, 0, 0.514);
+}
+
+#depoimento-1:checked ~ .navegacao-css #label-1,
+#depoimento-2:checked ~ .navegacao-css #label-2,
+#depoimento-3:checked ~ .navegacao-css #label-3 {
+    background-color: #ff0000;
+    box-shadow: 0 0 8px #ff0000;
+}
+.container-titulo h1 {
+background-image: url('glitch.gif');
+background-size: cover;
+}
+
+
+
+/* ==========================================================================
+   RODAPÉ DO SISTEMA
+   ========================================================================== */
+.rodape-sistema {
+    width: 100%;
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid #1e293b;
+    background-color: #080a0f;
+    margin-top: 60px;
+}
+
+.texto-rodape {
+    color: #64748b;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
