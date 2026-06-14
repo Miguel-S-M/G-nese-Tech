@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criptografia — Gênese Tech</title>
+    <link rel="stylesheet" href="criptografia.css">
+</head>
+<body>
+
+    <!-- =====================================================================
+         MENU SUPERIOR
+         ===================================================================== -->
+    <header class="menu-superior">
+        <a href="hub.html" class="logo-reduzida" data-text="G_T">G_T</a>
+        <a href="hub.html" class="voltar-link">← Voltar ao Hub</a>
+    </header>
+
+
+    <!-- =====================================================================
+         HERO
+         ===================================================================== -->
+    <section class="secao-hero">
+        <!-- Fundo de binário gerado via JS -->
+        <div class="hero-bg-binary" id="hero-binary"></div>
+
+        <div class="hero-conteudo">
+            <p class="hero-eyebrow">&gt; módulo 05 — dados protegidos</p>
+
+            <!-- ── MINI-LOGO SVG: CADEADO DIGITAL ─────────────────────────── -->
+            <div style="display:flex; justify-content:center; margin-bottom:30px;">
+                <svg width="90" height="100" viewBox="0 0 90 100"
+                     xmlns="http://www.w3.org/2000/svg" aria-label="Cadeado digital">
+
+                    <!-- Grade binária de fundo -->
+                    <text x="0"  y="14" font-family="Courier New" font-size="7"
+                          fill="#00ff41" opacity="0.18" letter-spacing="2">01 10 11</text>
+                    <text x="2"  y="96" font-family="Courier New" font-size="7"
+                          fill="#00ff41" opacity="0.18" letter-spacing="2">10 01 00</text>
+                    <text x="58" y="55" font-family="Courier New" font-size="7"
+                          fill="#00f0ff" opacity="0.12" letter-spacing="1">1010</text>
+
+                    <!-- Arco do cadeado (haste) -->
+                    <path d="M27,46 L27,28 Q27,10 45,10 Q63,10 63,28 L63,46"
+                          fill="none" stroke="#ff0000" stroke-width="5"
+                          stroke-linecap="round"
+                          style="filter:drop-shadow(0 0 5px #ff0000)"/>
+
+                    <!-- Corpo do cadeado -->
+                    <rect x="14" y="44" width="62" height="44" rx="4" ry="4"
+                          fill="#0c1018" stroke="#ff0000" stroke-width="1.5"
+                          style="filter:drop-shadow(0 0 6px rgba(255,0,0,0.35))"/>
+
+                    <!-- Buracos de circuito — linhas decorativas -->
+                    <line x1="14" y1="56" x2="76" y2="56"
+                          stroke="#1e293b" stroke-width="1"/>
+                    <line x1="14" y1="76" x2="76" y2="76"
+                          stroke="#1e293b" stroke-width="1"/>
+                    <line x1="32" y1="44" x2="32" y2="88"
+                          stroke="#1e293b" stroke-width="1"/>
+                    <line x1="58" y1="44" x2="58" y2="88"
+                          stroke="#1e293b" stroke-width="1"/>
+
+                    <!-- Buraco da chave (círculo + barra) -->
+                    <circle cx="45" cy="63" r="7"
+                            fill="#080a0f" stroke="#ff0000" stroke-width="1.5"
+                            style="filter:drop-shadow(0 0 4px #ff0000)"/>
+                    <line x1="45" y1="70" x2="45" y2="80"
+                          stroke="#ff0000" stroke-width="2.5" stroke-linecap="round"
+                          style="filter:drop-shadow(0 0 3px #ff0000)"/>
+
+                    <!-- Pontos de nó de circuito -->
+                    <circle cx="14" cy="56" r="2.5" fill="#ff0000" opacity="0.6"/>
+                    <circle cx="76" cy="56" r="2.5" fill="#ff0000" opacity="0.6"/>
+                    <circle cx="14" cy="76" r="2.5" fill="#00f0ff" opacity="0.5"/>
+                    <circle cx="76" cy="76" r="2.5" fill="#00f0ff" opacity="0.5"/>
+                </svg>
+            </div>
+            <!-- ── FIM SVG ─────────────────────────────────────────────────── -->
+
+            <h1 class="hero-titulo">Cripto<span>grafia</span></h1>
+            <p class="hero-subtitulo">Proteção de Dados &amp; Comunicação Segura</p>
+        </div>
+    </section>
+
+
+    <!-- =====================================================================
+         CONTEÚDO DIDÁTICO
+         ===================================================================== -->
+    <main class="page-content">
+
+        <!-- ── 1. O QUE É CRIPTOGRAFIA ─────────────────────────────────────── -->
+        <section class="secao-didatica">
+            <h2>// O que é Criptografia</h2>
+            <p>
+                Criptografia é a ciência de transformar informação legível — chamada de
+                <strong style="color:#e2e8f0">texto claro (plaintext)</strong> — em um formato
+                ilegível denominado <strong style="color:#e2e8f0">texto cifrado (ciphertext)</strong>,
+                de modo que apenas entidades autorizadas consigam reverter essa transformação
+                e recuperar os dados originais.
+            </p>
+            <p>
+                A palavra vem do grego: <em>kryptós</em> (oculto) + <em>graphein</em> (escrever).
+                Usada há milénios — das cifras de César ao Enigma da Segunda Guerra —, hoje é a
+                fundação invisível que protege senhas, transações bancárias, mensagens e toda a
+                infraestrutura crítica da internet moderna.
+            </p>
+            <p>
+                Dois conceitos-chave sustentam a criptografia contemporânea:
+            </p>
+            <p>
+                <span class="badge-protocolo">Algoritmo</span> A função matemática que define
+                como cifrar e decifrar. Ex.: AES-256, RSA-2048, ChaCha20.
+                <br>
+                <span class="badge-protocolo">Chave</span> O segredo que parametriza o algoritmo.
+                Sem a chave correta, mesmo conhecendo o algoritmo, o texto cifrado é computacionalmente
+                inquebrável.
+            </p>
+        </section>
+
+        <div class="linha-decorativa"></div>
+
+        <!-- ── 2. SIMÉTRICA vs ASSIMÉTRICA ─────────────────────────────────── -->
+        <section class="secao-didatica">
+            <h2>// Simétrica vs Assimétrica</h2>
+            <p>
+                Existem dois paradigmas principais que diferem fundamentalmente na forma como as
+                chaves são geridas e distribuídas entre as partes comunicantes.
+            </p>
+
+            <div class="grid-comparacao">
+
+                <!-- SIMÉTRICA -->
+                <div class="card-cripto simetrica">
+                    <span class="card-tag">Tipo 01</span>
+                    <h3>Criptografia Simétrica</h3>
+                    <p>
+                        Uma <strong>única chave secreta</strong> é usada tanto para cifrar quanto
+                        para decifrar os dados. Ambas as partes precisam partilhar essa chave de
+                        forma segura antes de qualquer comunicação.
+                    </p>
+                    <ul>
+                        <li>Extremamente rápida — ideal para grandes volumes</li>
+                        <li>Problema: distribuição segura da chave</li>
+                        <li>Algoritmos: AES, ChaCha20, 3DES</li>
+                        <li>Uso: criptografia de disco, VPNs, bases de dados</li>
+                    </ul>
+                </div>
+
+                <!-- ASSIMÉTRICA -->
+                <div class="card-cripto assimetrica">
+                    <span class="card-tag">Tipo 02</span>
+                    <h3>Criptografia Assimétrica</h3>
+                    <p>
+                        Opera com um <strong>par de chaves matematicamente ligadas</strong>:
+                        a <em>chave pública</em> (partilhável com todos) para cifrar, e a
+                        <em>chave privada</em> (secreta) para decifrar.
+                    </p>
+                    <ul>
+                        <li>Resolve o problema da distribuição de chaves</li>
+                        <li>Mais lenta — usada para troca de chaves e assinaturas</li>
+                        <li>Algoritmos: RSA, ECC, Ed25519</li>
+                        <li>Uso: TLS/HTTPS, SSH, assinaturas digitais, PGP</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <p>
+                Na prática, os sistemas modernos utilizam <strong style="color:#e2e8f0">criptografia híbrida</strong>:
+                a assimétrica para trocar com segurança uma chave de sessão, e a simétrica para
+                cifrar o tráfego real com essa chave — combinando a segurança de uma com a
+                velocidade da outra.
+            </p>
+        </section>
+
+        <div class="linha-decorativa"></div>
+
+        <!-- ── 3. HTTPS ──────────────────────────────────────────────────────── -->
+        <section class="secao-didatica">
+            <h2>// Como o HTTPS Protege Dados em Trânsito</h2>
+            <p>
+                <span class="badge-protocolo">HTTP</span> transmite dados em texto claro — qualquer
+                ponto intermediário na rede pode ler ou modificar o conteúdo.
+                <span class="badge-protocolo">HTTPS</span> = HTTP sobre
+                <span class="badge-protocolo">TLS</span> (Transport Layer Security), que envolve
+                a comunicação num canal criptografado e autenticado.
+            </p>
+
+            <!-- Diagrama de fluxo TLS -->
+            <div class="diagrama-https">
+
+                <div class="linha-diagrama">
+                    <span class="node">BROWSER</span>
+                    <span class="seta">──────────────►</span>
+                    <span class="node">SERVIDOR</span>
+                </div>
+                <div class="linha-diagrama" style="padding-left:10px; color:#64748b; font-size:0.78rem;">
+                    ClientHello: versão TLS, cifras suportadas, nonce aleatório
+                </div>
+
+                <div class="linha-diagrama" style="margin-top:14px;">
+                    <span class="node">BROWSER</span>
+                    <span class="seta" style="color:#00f0ff;">◄──────────────</span>
+                    <span class="node">SERVIDOR</span>
+                </div>
+                <div class="linha-diagrama" style="padding-left:10px; color:#64748b; font-size:0.78rem;">
+                    ServerHello + Certificado X.509 (contém chave pública)
+                </div>
+
+                <div class="linha-diagrama" style="margin-top:14px;">
+                    <span class="node">BROWSER</span>
+                    <span class="seta">──────────────►</span>
+                    <span class="node">SERVIDOR</span>
+                </div>
+                <div class="linha-diagrama" style="padding-left:10px; color:#64748b; font-size:0.78rem;">
+                    Segredo pré-mestre cifrado com a chave pública do servidor
+                </div>
+
+                <div class="linha-diagrama" style="margin-top:14px; color:#00ff41;">
+                    <span class="node" style="border-color:rgba(0,255,65,0.4); color:#00ff41;">BROWSER</span>
+                    <span class="seta" style="color:#00ff41;">◄══════════════►</span>
+                    <span class="node" style="border-color:rgba(0,255,65,0.4); color:#00ff41;">SERVIDOR</span>
+                </div>
+                <div class="linha-diagrama" style="padding-left:10px; font-size:0.78rem;">
+                    <span class="label-seta">✓ Canal AES-256 estabelecido — todos os dados cifrados daqui em diante</span>
+                </div>
+
+            </div>
+
+            <p>
+                O certificado TLS é emitido e assinado por uma
+                <strong style="color:#e2e8f0">Autoridade Certificadora (CA)</strong> de confiança,
+                garantindo que o servidor é realmente quem diz ser — prevenindo ataques
+                man-in-the-middle. O cadeado verde no browser é a confirmação visual deste processo.
+            </p>
+            <p>
+                A versão atual é o <span class="badge-protocolo">TLS 1.3</span>, que elimina
+                algoritmos inseguros legados, reduz a latência do handshake (1-RTT ou 0-RTT) e
+                torna obrigatório o <strong style="color:#e2e8f0">Perfect Forward Secrecy (PFS)</strong>
+                — garantindo que, mesmo que a chave privada do servidor seja futuramente
+                comprometida, as sessões passadas permanecem protegidas.
+            </p>
+        </section>
+
+    </main>
+
+
+    
+
+    <!-- =====================================================================
+         RODAPÉ
+         ===================================================================== -->
+    <footer class="rodape-sistema">
+        <p class="texto-rodape">
+            © 2026 GÊNESE TECH // MÓDULO CRIPTOGRAFIA //
+            TLS 1.3 ATIVO // ALL RIGHTS RESERVED.
+        </p>
+    </footer>
+
+
+    <!-- =====================================================================
+         JAVASCRIPT
+         ===================================================================== -->
+    <script>
+    // =========================================================================
+    //  FUNDO BINÁRIO DO HERO
+    //  Gera uma grade aleatória de 0s e 1s para o fundo da secção hero.
+    // =========================================================================
+    (function gerarFundoBinario() {
+        const el = document.getElementById('hero-binary');
+        if (!el) return;
+
+        const colunas = 80;   // caracteres por linha
+        const linhas  = 30;   // número de linhas
+
+        let conteudo = '';
+        for (let l = 0; l < linhas; l++) {
+            for (let c = 0; c < colunas; c++) {
+                conteudo += Math.random() > 0.5 ? '1' : '0';
+                if ((c + 1) % 4 === 0) conteudo += ' '; // espaço a cada 4 bits
+            }
+            conteudo += '\n';
+        }
+        el.textContent = conteudo;
+    })();
+
+
+   
