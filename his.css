@@ -1,6 +1,4 @@
-/* ==========================================================================
-   CONFIGURAÇÕES BASE
-   ========================================================================== */
+/* BASE */
    html {
     scroll-behavior: smooth;
 }
@@ -20,9 +18,23 @@ body {
     overflow-x: hidden;
 }
 
-/* ==========================================================================
-   MENU SUPERIOR
-   ========================================================================== */
+
+
+
+/* titulo principal */
+h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-top: 140px;
+    color: #fff;
+    text-shadow: 0 0 15px #ff0000;
+    letter-spacing: 4px;
+}
+
+
+
+
+/*  MENU SUPERIOR */
 .menu-superior {
     display: flex;
     justify-content: space-between;
@@ -45,7 +57,10 @@ body {
     transition: color 0.3s ease, text-shadow 0.3s ease; 
 }
 
-/* Combinando Neon + Glitch na Logo */
+
+
+
+/* Combinando Neon  */
 .logo-reduzida:hover {
     color: #ffffff; 
     text-shadow: 
@@ -55,6 +70,10 @@ body {
         0 0 40px #ff0000;
 }
 
+
+
+
+/* navegação */
 .nav-lista {
     display: flex;
     list-style: none;
@@ -72,9 +91,10 @@ body {
     color: #ff0000;
 }
 
-/* ==========================================================================
-   EFEITO GLITCH / INTERFERÊNCIA CIBERNÉTICA
-   ========================================================================== */
+
+
+
+/*  EFEITO GLITCH / INTERFERÊNCIA CIBERNÉTICA */
 .glitch {
     position: relative;
     display: inline-block;
@@ -104,6 +124,9 @@ body {
     animation: glitch-anim-2 0.33s infinite linear alternate-reverse;
 }
 
+
+
+/* efeito glitc */
 @keyframes glitch-anim-1 {
     0% { clip-path: inset(40% 0 61% 0); }
     20% { clip-path: inset(92% 0 1% 0); }
@@ -122,38 +145,83 @@ body {
     100% { clip-path: inset(5% 0 88% 0); }
 }
 
-/* ==========================================================================
-   SEÇÃO HERO (INTRODUÇÃO)
-   ========================================================================== */
-.secao-hero {
-    height: 65vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 100px;
+
+
+
+/* imagens */
+img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin: 15px auto;
+    transition: 0.3s;
 }
 
-.container-titulo {
+
+
+
+/* linha vermelha */
+
+section {
+    border-top: 2px solid #ff0000;
+    padding-top: 30px;
+}
+
+
+
+
+/* cards */ 
+
+article {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid #1e293b;
+    border-left: 4px solid #ff0000;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 25px 0;
+    transition: 0.3s;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    border-color: #ff0000;
+    box-shadow: 0 0 20px rgba(255,0,0,0.4);
+}
+
+article h3 {
+    color: #ff4d4d;
+    margin-bottom: 10px;
+}
+
+article p {
+    color: #cbd5e1;
+}
+
+
+
+/*  galeri */
+figure {
+    display: inline-block;
+    margin: 15px;
     text-align: center;
 }
 
-#titulo-principal {
-    font-size: 4.5rem;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 6px;
-    opacity: 0; 
-    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.5s ease;
+figcaption {
+    color: #94a3b8;
+    margin-top: 10px;
 }
 
-.titulo-animado {
-    opacity: 1 !important;
-    transform: scale(1.1);
+
+
+
+/* PERSONAGENS */
+section article img[alt*="Ada"],
+section article img[alt*="Charles"],
+section article img[alt*="Alan"] {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
 }
 
-.subtitulo-efeito {
-    color: #64748b;
-    margin-top: 15px;
-    font-size: 1.1rem;
-    letter-spacing: 3px;
-}
