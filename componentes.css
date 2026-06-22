@@ -107,3 +107,21 @@ img {
 img:hover {
     border-color: #8f0000;
 }
+
+/* ==========================================================================
+   RODAPÉ DO SISTEMA
+   ========================================================================== */
+.rodape-sistema {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 30px 20px !important;
+    border-top: 1px solid #1e293b !important;
+    background-color: #080a0f !important;
+    margin-top: 60px !important;
+}
+
+.texto-rodape {
+    color: #64748b !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 1px !important;
+}

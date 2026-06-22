@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080a0f">
     <title>Firewall — Gênese Tech</title>
     <link rel="stylesheet" href="firewall.css">
     <link rel="icon" href="firewall.png">
@@ -12,60 +13,48 @@
     <!-- =====================================================================
          MENU SUPERIOR
          ===================================================================== -->
-    <header class="menu-superior">
-        <a href="hub.html" class="logo-reduzida" data-text="G_T">G_T</a>
-        <a href="cyber-seguranca.html" class="voltar-link">← Voltar para Cyber Segurança</a>
+    <header class="menu-superior" role="banner">
+        <a href="hub.html" class="logo-reduzida" data-text="G_T" aria-label="Ir para o Hub da Gênese Tech">G_T</a>
+        <a href="cyber-seguranca.html" class="voltar-link" aria-label="Voltar para Cyber Segurança">← Voltar</a>
     </header>
 
 
     <!-- =====================================================================
          HERO
          ===================================================================== -->
-    <section class="secao-hero">
-        <div class="hero-bg-binary" id="hero-binary"></div>
+    <section class="secao-hero" aria-label="Introdução — Firewall">
+        <div class="hero-bg-binary" id="hero-binary" aria-hidden="true"></div>
 
         <div class="hero-conteudo">
             <p class="hero-eyebrow">&gt; módulo 02 — segurança de rede</p>
 
-            <!-- ── MINI-LOGO SVG: ESCUDO DIGITAL ─────────────────────────── -->
-            <div style="display:flex; justify-content:center; margin-bottom:30px;">
+            <!-- SVG: ESCUDO DIGITAL -->
+            <div style="display:flex; justify-content:center; margin-bottom:30px;" aria-hidden="true">
                 <svg width="90" height="100" viewBox="0 0 90 100"
-                     xmlns="http://www.w3.org/2000/svg" aria-label="Escudo digital firewall">
-
-                    <!-- Grade binária de fundo -->
+                     xmlns="http://www.w3.org/2000/svg" focusable="false">
                     <text x="0"  y="14" font-family="Courier New" font-size="7"
                           fill="#ff0000" opacity="0.15" letter-spacing="2">10 11 01</text>
                     <text x="2"  y="96" font-family="Courier New" font-size="7"
                           fill="#ff0000" opacity="0.15" letter-spacing="2">01 00 10</text>
                     <text x="58" y="55" font-family="Courier New" font-size="7"
                           fill="#00f0ff" opacity="0.10" letter-spacing="1">0101</text>
-
-                    <!-- Escudo principal -->
                     <path d="M45 8 L72 20 L72 50 Q72 72 45 85 Q18 72 18 50 L18 20 Z"
                           fill="#0c1018" stroke="#ff0000" stroke-width="1.8"
                           style="filter:drop-shadow(0 0 6px rgba(255,0,0,0.5))"/>
-
-                    <!-- Chama interna (firewall) -->
                     <path d="M45 30 Q50 38 47 44 Q52 40 51 48 Q55 42 52 52
                              Q57 46 54 56 Q50 64 45 66 Q40 64 36 56 Q33 46 38 52
                              Q35 42 39 48 Q38 40 43 44 Q40 38 45 30Z"
                           fill="#ff0000" opacity="0.85"
                           style="filter:drop-shadow(0 0 5px #ff0000)"/>
-
-                    <!-- Barra de circuito horizontal -->
-                    <line x1="18" y1="42" x2="72" y2="42"
-                          stroke="#1e293b" stroke-width="1"/>
-
-                    <!-- Nós de circuito -->
+                    <line x1="18" y1="42" x2="72" y2="42" stroke="#1e293b" stroke-width="1"/>
                     <circle cx="18" cy="42" r="2" fill="#ff0000" opacity="0.5"/>
                     <circle cx="72" cy="42" r="2" fill="#ff0000" opacity="0.5"/>
                     <circle cx="45" cy="8"  r="2" fill="#00f0ff" opacity="0.4"/>
                 </svg>
             </div>
-            <!-- ── FIM SVG ─────────────────────────────────────────────────── -->
 
             <h1 class="hero-titulo">Fire<span>wall</span></h1>
-            <p class="hero-subtitulo">Barreira Digital & Controle de Tráfego de Rede</p>
+            <p class="hero-subtitulo">Barreira Digital &amp; Controle de Tráfego de Rede</p>
         </div>
     </section>
 
@@ -73,11 +62,11 @@
     <!-- =====================================================================
          CONTEÚDO DIDÁTICO
          ===================================================================== -->
-    <main class="page-content">
+    <main class="page-content" id="conteudo-principal">
 
-        <!-- ── 1. O QUE É FIREWALL ─────────────────────────────────────────── -->
-        <section class="secao-didatica">
-            <h2>// O que é um Firewall</h2>
+        <!-- 1. O QUE É FIREWALL -->
+        <section class="secao-didatica" aria-labelledby="titulo-oque">
+            <h2 id="titulo-oque">// O que é um Firewall</h2>
             <p>
                 Um <strong style="color:#e2e8f0">Firewall</strong> é uma barreira de segurança
                 digital que monitora e controla o tráfego de rede — entradas e saídas — com base
@@ -93,39 +82,39 @@
             </p>
             <p>Os tipos de implementação mais utilizados incluem:</p>
 
-            <div class="impl-grid">
-                <div class="impl-item">
-                    <span class="impl-icon">🖥️</span>
+            <div class="impl-grid" role="list" aria-label="Tipos de implementação de firewall">
+                <div class="impl-item" role="listitem">
+                    <span class="impl-icon" aria-hidden="true">🖥️</span>
                     <span>Firewall de Hardware</span>
                 </div>
-                <div class="impl-item">
-                    <span class="impl-icon">💻</span>
+                <div class="impl-item" role="listitem">
+                    <span class="impl-icon" aria-hidden="true">💻</span>
                     <span>Firewall de Software</span>
                 </div>
-                <div class="impl-item">
-                    <span class="impl-icon">⚙️</span>
+                <div class="impl-item" role="listitem">
+                    <span class="impl-icon" aria-hidden="true">⚙️</span>
                     <span>Firewall Híbrido</span>
                 </div>
-                <div class="impl-item">
-                    <span class="impl-icon">☁️</span>
+                <div class="impl-item" role="listitem">
+                    <span class="impl-icon" aria-hidden="true">☁️</span>
                     <span>Firewall em Nuvem</span>
                 </div>
-                <div class="impl-item">
-                    <span class="impl-icon">🔒</span>
+                <div class="impl-item" role="listitem">
+                    <span class="impl-icon" aria-hidden="true">🔒</span>
                     <span>Next-Gen Firewall (NGFW)</span>
                 </div>
-                <div class="impl-item">
-                    <span class="impl-icon">🌐</span>
+                <div class="impl-item" role="listitem">
+                    <span class="impl-icon" aria-hidden="true">🌐</span>
                     <span>WAF — Web Application</span>
                 </div>
             </div>
         </section>
 
-        <div class="linha-decorativa"></div>
+        <div class="linha-decorativa" role="separator" aria-hidden="true"></div>
 
-        <!-- ── 2. FORMAS DE FUNCIONAMENTO ─────────────────────────────────── -->
-        <section class="secao-didatica">
-            <h2>// Formas de Funcionamento</h2>
+        <!-- 2. FORMAS DE FUNCIONAMENTO -->
+        <section class="secao-didatica" aria-labelledby="titulo-funcionamento">
+            <h2 id="titulo-funcionamento">// Formas de Funcionamento</h2>
             <p>
                 Cada modelo de firewall opera com uma estratégia distinta de inspeção, filtragem e
                 resposta ao tráfego. Conhecer sua arquitetura é essencial para escolher a solução
@@ -133,14 +122,14 @@
             </p>
 
             <!-- FILTRAGEM DE PACOTES -->
-            <div class="func-card" id="filtragem-pacotes">
+            <article class="func-card" id="filtragem-pacotes">
                 <div class="func-header">
-                    <div class="func-numero">01</div>
+                    <div class="func-numero" aria-hidden="true">01</div>
                     <div>
                         <span class="func-tag">Nível de Rede</span>
                         <h3 class="func-titulo">Filtragem de Pacotes</h3>
                     </div>
-                    <div class="func-nivel nivel-basico">BÁSICO</div>
+                    <div class="func-nivel nivel-basico" aria-label="Nível: Básico">BÁSICO</div>
                 </div>
                 <div class="func-corpo">
                     <p>
@@ -154,27 +143,27 @@
                         <em>spoofing</em> e fragmentação de pacotes. É utilizado em roteadores
                         domésticos e em camadas externas de redes corporativas como primeira linha.
                     </p>
-                    <div class="func-fases">
-                        <span class="fase">Recebe pacote</span>
-                        <span class="seta-fase">→</span>
-                        <span class="fase">Verifica cabeçalho</span>
-                        <span class="seta-fase">→</span>
-                        <span class="fase">Checa regras ACL</span>
-                        <span class="seta-fase">→</span>
-                        <span class="fase">Permite / Bloqueia</span>
+                    <div class="func-fases" role="list" aria-label="Etapas do processo de filtragem">
+                        <span class="fase" role="listitem">Recebe pacote</span>
+                        <span class="seta-fase" aria-hidden="true">→</span>
+                        <span class="fase" role="listitem">Verifica cabeçalho</span>
+                        <span class="seta-fase" aria-hidden="true">→</span>
+                        <span class="fase" role="listitem">Checa regras ACL</span>
+                        <span class="seta-fase" aria-hidden="true">→</span>
+                        <span class="fase" role="listitem">Permite / Bloqueia</span>
                     </div>
                 </div>
-            </div>
+            </article>
 
             <!-- INSPEÇÃO DE ESTADO -->
-            <div class="func-card" id="inspecao-estado">
+            <article class="func-card" id="inspecao-estado">
                 <div class="func-header">
-                    <div class="func-numero">02</div>
+                    <div class="func-numero" aria-hidden="true">02</div>
                     <div>
                         <span class="func-tag">Nível de Sessão</span>
                         <h3 class="func-titulo">Inspeção de Estado (Stateful)</h3>
                     </div>
-                    <div class="func-nivel nivel-medio">INTERMEDIÁRIO</div>
+                    <div class="func-nivel nivel-medio" aria-label="Nível: Intermediário">INTERMEDIÁRIO</div>
                 </div>
                 <div class="func-corpo">
                     <p>
@@ -189,27 +178,27 @@
                         são automaticamente descartados. É o modelo padrão em firewalls corporativos
                         de médio porte.
                     </p>
-                    <div class="func-fases">
-                        <span class="fase">Recebe pacote</span>
-                        <span class="seta-fase">→</span>
-                        <span class="fase">Consulta tabela de estado</span>
-                        <span class="seta-fase">→</span>
-                        <span class="fase">Valida sessão</span>
-                        <span class="seta-fase">→</span>
-                        <span class="fase">Decisão</span>
+                    <div class="func-fases" role="list" aria-label="Etapas da inspeção stateful">
+                        <span class="fase" role="listitem">Recebe pacote</span>
+                        <span class="seta-fase" aria-hidden="true">→</span>
+                        <span class="fase" role="listitem">Consulta tabela de estado</span>
+                        <span class="seta-fase" aria-hidden="true">→</span>
+                        <span class="fase" role="listitem">Valida sessão</span>
+                        <span class="seta-fase" aria-hidden="true">→</span>
+                        <span class="fase" role="listitem">Decisão</span>
                     </div>
                 </div>
-            </div>
+            </article>
 
             <!-- PROXY / NÍVEL DE APLICAÇÃO -->
-            <div class="func-card" id="proxy-aplicacao">
+            <article class="func-card" id="proxy-aplicacao">
                 <div class="func-header">
-                    <div class="func-numero">03</div>
+                    <div class="func-numero" aria-hidden="true">03</div>
                     <div>
                         <span class="func-tag">Nível de Aplicação</span>
                         <h3 class="func-titulo">Proxy (Nível de Aplicação)</h3>
                     </div>
-                    <div class="func-nivel nivel-avancado">AVANÇADO</div>
+                    <div class="func-nivel nivel-avancado" aria-label="Nível: Avançado">AVANÇADO</div>
                 </div>
                 <div class="func-corpo">
                     <p>
@@ -225,23 +214,23 @@
                         Muito utilizado em WAFs (<em>Web Application Firewalls</em>) para proteger
                         aplicações web contra SQL Injection, XSS e outros ataques de camada 7.
                     </p>
-                    <div class="func-fases">
-                        <span class="fase">Cliente → Proxy</span>
-                        <span class="seta-fase">→</span>
-                        <span class="fase">Inspeção L7</span>
-                        <span class="seta-fase">→</span>
-                        <span class="fase">Proxy → Servidor</span>
-                        <span class="seta-fase">→</span>
-                        <span class="fase">Resposta filtrada</span>
+                    <div class="func-fases" role="list" aria-label="Etapas do proxy de aplicação">
+                        <span class="fase" role="listitem">Cliente → Proxy</span>
+                        <span class="seta-fase" aria-hidden="true">→</span>
+                        <span class="fase" role="listitem">Inspeção L7</span>
+                        <span class="seta-fase" aria-hidden="true">→</span>
+                        <span class="fase" role="listitem">Proxy → Servidor</span>
+                        <span class="seta-fase" aria-hidden="true">→</span>
+                        <span class="fase" role="listitem">Resposta filtrada</span>
                     </div>
                 </div>
-            </div>
+            </article>
 
             <!-- COMPARATIVO HARDWARE vs SOFTWARE -->
             <div class="comparativo-tipos">
                 <div class="tipo-card hardware">
                     <div class="tipo-header">
-                        <span class="tipo-icon">🖧</span>
+                        <span class="tipo-icon" aria-hidden="true">🖧</span>
                         <div>
                             <span class="tipo-tag">Implementação Física</span>
                             <h3>Firewall de Hardware</h3>
@@ -263,7 +252,7 @@
 
                 <div class="tipo-card software">
                     <div class="tipo-header">
-                        <span class="tipo-icon">🖥️</span>
+                        <span class="tipo-icon" aria-hidden="true">🖥️</span>
                         <div>
                             <span class="tipo-tag">Implementação Lógica</span>
                             <h3>Firewall de Software</h3>
@@ -285,11 +274,11 @@
             </div>
         </section>
 
-        <div class="linha-decorativa"></div>
+        <div class="linha-decorativa" role="separator" aria-hidden="true"></div>
 
-        <!-- ── 3. LIMITAÇÕES ──────────────────────────────────────────────── -->
-        <section class="secao-didatica">
-            <h2>// Limitações do Firewall</h2>
+        <!-- 3. LIMITAÇÕES -->
+        <section class="secao-didatica" aria-labelledby="titulo-limitacoes">
+            <h2 id="titulo-limitacoes">// Limitações do Firewall</h2>
             <p>
                 Apesar de ser peça fundamental na arquitetura de segurança, o firewall
                 <strong style="color:#e2e8f0">não é uma solução completa</strong> e apresenta
@@ -316,7 +305,7 @@
                 </div>
             </div>
 
-            <div class="nota-tecnica">
+            <div class="nota-tecnica" role="note">
                 <span class="nota-prefixo">&gt;&gt; NOTA TÉCNICA //</span>
                 <p>
                     Soluções modernas como <em>Palo Alto Networks NGFW</em>, <em>Fortinet FortiGate</em>
@@ -334,24 +323,26 @@
     <!-- =====================================================================
          RODAPÉ
          ===================================================================== -->
-    <footer class="rodape-sistema">
+    <footer class="rodape-sistema" role="contentinfo">
         <p class="texto-rodape">
-            © 2026 GÊNESE TECH // MÓDULO FIREWALL //
+            © 2026 GÊNESE TECH // MÓDULO FIREWALL //<br>
             REDE MONITORADA // ALL RIGHTS RESERVED.
         </p>
     </footer>
 
 
     <!-- =====================================================================
-         JAVASCRIPT — Fundo binário animado
+         JAVASCRIPT
          ===================================================================== -->
     <script>
+    /* Fundo binário — reduz colunas em telas pequenas para melhor perf */
     (function gerarFundoBinario() {
         const el = document.getElementById('hero-binary');
         if (!el) return;
-        const colunas = 80;
-        const linhas  = 30;
-        let conteudo = '';
+        const mobile  = window.innerWidth < 480;
+        const colunas = mobile ? 40 : 80;
+        const linhas  = mobile ? 20 : 30;
+        let conteudo  = '';
         for (let l = 0; l < linhas; l++) {
             for (let c = 0; c < colunas; c++) {
                 conteudo += Math.random() > 0.5 ? '1' : '0';

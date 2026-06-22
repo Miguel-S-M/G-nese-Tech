@@ -2,6 +2,20 @@
    html {
     scroll-behavior: smooth;
 }
+#cabecario-historia {
+    text-align: center;
+}
+/* introdução */
+#intro-his{
+    margin-left: 100px;
+    color: #ff0000;
+}
+#intro-p-his{
+    text-align: center;
+
+}
+
+
    body { 
     background-color: #ffffff;
    }
@@ -224,4 +238,40 @@ section article img[alt*="Alan"] {
     width: 180px;
     height: 180px;
 }
+/* PERSONAGENS - TITULO */
+#per-his {
+    margin-left: 100px;
+    color: red;
+}
+/* conclusão */
+#con-his{
+    margin-left: 100px;
+    color: red;
+}
+#con-p-his{
+    text-align: center;
+}
 
+/* ==========================================================================
+   RODAPÉ DO SISTEMA
+   ========================================================================== */
+.rodape-sistema {
+    width: 100%;
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid #1e293b;
+    background-color: #080a0f;
+    margin-top: 60px;
+}
+
+.texto-rodape {
+    color: #64748b;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+/* galeria */
+#gal-his{
+    margin-left: 100px;
+    color: red;
+}

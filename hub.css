@@ -178,6 +178,9 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 35px;
+    margin-left: 116px;
+ justify-content: space-between;
+ margin-right: 70px;
 }
 
 .cartao-monolito {
