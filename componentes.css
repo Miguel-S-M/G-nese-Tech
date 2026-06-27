@@ -222,3 +222,18 @@ img:hover {
         width: 100%;
     }
 }
+
+iframe {
+    display: block;
+    width: 800px;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 30px auto;
+    border: 1px solid #1e293b;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+iframe:hover {
+    border-color: #ff0000;
+}
