@@ -1,0 +1,172 @@
+*============================================= =============================
+   CONFIGURAÇÕES BASE
+========================================================================== */
+   html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+   body { 
+    background-color: #ffffff;
+   }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #080a0f;
+    color: #e2e8f0;
+    overflow-x: hidden;
+}
+
+
+.menu-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    padding: clamp(14px, 3vw, 25px) clamp(16px, 5vw, 40px);
+    background-color: rgba(8, 10, 15, 0.9);
+    border-bottom: 1px solid #1e293b;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+.logo-reduzida {
+    font-size: clamp(1.6rem, 5vw, 2.7rem);
+    font-weight: bold;
+    color: #1a231a; 
+    letter-spacing: 2px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: color 0.3s ease, text-shadow 0.3s ease; 
+}
+
+/* Combinando Neon + Glitch na Logo */
+.logo-reduzida:hover {
+    color: #ffffff; 
+    text-shadow: 
+        0 0 4px #ffffff,        
+        0 0 10px #ff0000,       
+        0 0 20px #ff0000,       
+        0 0 40px #ff0000;
+}
+
+.nav-lista {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: clamp(10px, 3vw, 30px);
+}
+
+.nav-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: clamp(0.75rem, 2.2vw, 1rem);
+    white-space: nowrap;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ff0000;
+}
+
+@media (max-width: 640px) {
+    .menu-superior {
+        justify-content: center;
+        text-align: center;
+    }
+    .nav-lista {
+        justify-content: center;
+        width: 100%;
+        gap: 14px 18px;
+    }
+}
+
+/* ==========================================================================
+   EFEITO GLITCH / INTERFERÊNCIA CIBERNÉTICA
+   ========================================================================== */
+.glitch {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #080a0f; 
+    clip: rect(0, 0, 0, 0); 
+}
+
+.glitch:hover::before {
+    left: -2px;
+    text-shadow: 2px 0 #ff0055;
+    animation: glitch-anim-1 0.46s infinite linear alternate-reverse;
+}
+
+.glitch:hover::after {
+    left: 2px;
+    text-shadow: -2px 0 #00f2fe;
+    animation: glitch-anim-2 0.33s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+    0% { clip-path: inset(40% 0 61% 0); }
+    20% { clip-path: inset(92% 0 1% 0); }
+    40% { clip-path: inset(5% 0 85% 0); }
+    60% { clip-path: inset(57% 0 27% 0); }
+    80% { clip-path: inset(15% 0 80% 0); }
+    100% { clip-path: inset(80% 0 5% 0); }
+}
+
+@keyframes glitch-anim-2 {
+    0% { clip-path: inset(25% 0 58% 0); }
+    22% { clip-path: inset(84% 0 3% 0); }
+    39% { clip-path: inset(11% 0 76% 0); }
+    61% { clip-path: inset(70% 0 15% 0); }
+    82% { clip-path: inset(43% 0 43% 0); }
+    100% { clip-path: inset(5% 0 88% 0); }
+}
+
+
+
+/* ==========================================================================
+   HERO
+   Primeira seção da página.
+   ========================================================================== */
+
+/* Centraliza o título principal */
+.hero-representantes{
+    padding:170px 20px 90px;
+    text-align:center;
+}
+
+/* Estilo do título */
+.hero-representantes h1{
+    color:#ffffff;
+    font-size:4rem;
+    letter-spacing:6px;
+    margin-bottom:20px;
+}
+
+/* Texto abaixo do título */
+.hero-representantes p{
+    color:#94a3b8;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
