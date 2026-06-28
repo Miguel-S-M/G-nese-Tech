@@ -1,13 +1,11 @@
-*============================================= =============================
+/* ==========================================================================
    CONFIGURAÇÕES BASE
-========================================================================== */
-   html {
+   ========================================================================== */
+html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
 }
-   body { 
-    background-color: #ffffff;
-   }
+
 * {
     margin: 0;
     padding: 0;
@@ -22,15 +20,15 @@ body {
     overflow-x: hidden;
 }
 
-
+/* ==========================================================================
+   MENU SUPERIOR
+   ========================================================================== */
 .menu-superior {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 10px 20px;
     padding: clamp(14px, 3vw, 25px) clamp(16px, 5vw, 40px);
-    background-color: rgba(8, 10, 15, 0.9);
+    background-color: rgba(8, 10, 15, 0.95);
     border-bottom: 1px solid #1e293b;
     position: fixed;
     width: 100%;
@@ -38,26 +36,51 @@ body {
     z-index: 100;
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
+    flex-wrap: wrap;
+    gap: 10px 20px;
 }
 
 .logo-reduzida {
     font-size: clamp(1.6rem, 5vw, 2.7rem);
     font-weight: bold;
-    color: #1a231a; 
+    color: #94a3b8;
     letter-spacing: 2px;
     cursor: pointer;
     flex-shrink: 0;
-    transition: color 0.3s ease, text-shadow 0.3s ease; 
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* Combinando Neon + Glitch na Logo */
 .logo-reduzida:hover {
-    color: #ffffff; 
-    text-shadow: 
-        0 0 4px #ffffff,        
-        0 0 10px #ff0000,       
-        0 0 20px #ff0000,       
+    color: #ffffff;
+    text-shadow:
+        0 0 4px #ffffff,
+        0 0 10px #ff0000,
+        0 0 20px #ff0000,
         0 0 40px #ff0000;
+}
+
+/* Botão hamburguer — visível só no mobile */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 1px solid #334155;
+    color: #94a3b8;
+    font-size: 1.3rem;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: color 0.3s, border-color 0.3s;
+    line-height: 1;
+}
+
+.menu-toggle:hover {
+    color: #ff0000;
+    border-color: #ff0000;
+}
+
+/* Nav wrapper */
+#navMenu {
+    display: flex;
 }
 
 .nav-lista {
@@ -80,20 +103,65 @@ body {
     color: #ff0000;
 }
 
-@media (max-width: 640px) {
+.nav-link--ativo {
+    color: #ff0000;
+    border-bottom: 1px solid #ff0000;
+    padding-bottom: 2px;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE — MENU HAMBURGUER
+   ========================================================================== */
+@media (max-width: 768px) {
     .menu-superior {
-        justify-content: center;
-        text-align: center;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 0;
     }
-    .nav-lista {
-        justify-content: center;
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    #navMenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
-        gap: 14px 18px;
+        background-color: rgba(8, 10, 15, 0.98);
+        border-bottom: 1px solid #1e293b;
+        padding: 16px 20px 20px;
+    }
+
+    #navMenu.nav-aberto {
+        display: flex;
+    }
+
+    .nav-lista {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav-lista li {
+        border-bottom: 1px solid #1e293b;
+    }
+
+    .nav-lista li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 12px 4px;
+        font-size: 0.9rem;
     }
 }
 
 /* ==========================================================================
-   EFEITO GLITCH / INTERFERÊNCIA CIBERNÉTICA
+   EFEITO GLITCH
    ========================================================================== */
 .glitch {
     position: relative;
@@ -108,8 +176,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #080a0f; 
-    clip: rect(0, 0, 0, 0); 
+    background: #080a0f;
+    clip: rect(0, 0, 0, 0);
 }
 
 .glitch:hover::before {
@@ -125,48 +193,252 @@ body {
 }
 
 @keyframes glitch-anim-1 {
-    0% { clip-path: inset(40% 0 61% 0); }
-    20% { clip-path: inset(92% 0 1% 0); }
-    40% { clip-path: inset(5% 0 85% 0); }
-    60% { clip-path: inset(57% 0 27% 0); }
-    80% { clip-path: inset(15% 0 80% 0); }
+    0%   { clip-path: inset(40% 0 61% 0); }
+    20%  { clip-path: inset(92% 0 1% 0); }
+    40%  { clip-path: inset(5% 0 85% 0); }
+    60%  { clip-path: inset(57% 0 27% 0); }
+    80%  { clip-path: inset(15% 0 80% 0); }
     100% { clip-path: inset(80% 0 5% 0); }
 }
 
 @keyframes glitch-anim-2 {
-    0% { clip-path: inset(25% 0 58% 0); }
-    22% { clip-path: inset(84% 0 3% 0); }
-    39% { clip-path: inset(11% 0 76% 0); }
-    61% { clip-path: inset(70% 0 15% 0); }
-    82% { clip-path: inset(43% 0 43% 0); }
+    0%   { clip-path: inset(25% 0 58% 0); }
+    22%  { clip-path: inset(84% 0 3% 0); }
+    39%  { clip-path: inset(11% 0 76% 0); }
+    61%  { clip-path: inset(70% 0 15% 0); }
+    82%  { clip-path: inset(43% 0 43% 0); }
     100% { clip-path: inset(5% 0 88% 0); }
 }
 
-
-
 /* ==========================================================================
    HERO
-   Primeira seção da página.
    ========================================================================== */
-
-/* Centraliza o título principal */
-.hero-representantes{
-    padding:170px 20px 90px;
-    text-align:center;
+.hero-representantes {
+    padding: 170px 20px 90px;
+    text-align: center;
 }
 
-/* Estilo do título */
-.hero-representantes h1{
-    color:#ffffff;
-    font-size:4rem;
-    letter-spacing:6px;
-    margin-bottom:20px;
+@media (max-width: 768px) {
+    .hero-representantes {
+        padding: 130px 16px 60px;
+    }
 }
 
-/* Texto abaixo do título */
-.hero-representantes p{
-    color:#94a3b8;
-    max-width:700px;
-    margin:auto;
-    line-height:1.8;
+.hero-tag {
+    color: #ff0000;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    margin-bottom: 16px;
+    opacity: 0.8;
+}
+
+.hero-representantes h1 {
+    color: #ffffff;
+    font-size: clamp(1.8rem, 6vw, 4rem);
+    letter-spacing: clamp(2px, 2vw, 6px);
+    margin-bottom: 20px;
+}
+
+.hero-representantes p {
+    color: #94a3b8;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    padding: 0 8px;
+}
+
+/* ==========================================================================
+   SEÇÃO REPRESENTANTES — GRID DE CARDS
+   ========================================================================== */
+.secao-representantes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 60px clamp(16px, 6vw, 80px);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+    .secao-representantes {
+        grid-template-columns: 1fr;
+        padding: 32px 16px;
+        gap: 18px;
+    }
+}
+
+/* Card base */
+.card-representante {
+    background-color: #0d1117;
+    border: 1px solid #1e293b;
+    border-top: 2px solid #ff0000;
+    border-radius: 4px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 480px) {
+    .card-representante {
+        padding: 20px 16px;
+    }
+}
+
+.card-representante:hover {
+    transform: translateY(-5px);
+    border-color: #ff0000;
+    box-shadow: 0 8px 30px rgba(255, 0, 0, 0.12);
+}
+
+/* Cabeçalho do card */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.avatar-placeholder {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    background-color: #1a0a0a;
+    border: 1px solid #ff0000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ff0000;
+    letter-spacing: 1px;
+}
+
+.card-titulo h2 {
+    color: #ffffff;
+    font-size: clamp(0.95rem, 3vw, 1.05rem);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.card-titulo h3 {
+    color: #ff0000;
+    font-size: clamp(0.65rem, 2vw, 0.75rem);
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 3px;
+    opacity: 0.85;
+}
+
+/* Descrição */
+.card-representante p {
+    color: #94a3b8;
+    font-size: clamp(0.82rem, 2.2vw, 0.88rem);
+    line-height: 1.75;
+    flex-grow: 1;
+}
+
+.card-representante p strong {
+    color: #cbd5e1;
+}
+
+/* Tags de tecnologia */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.tag {
+    background-color: rgba(255, 0, 0, 0.08);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    color: #ff6666;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   SEÇÃO TECNOLOGIAS
+   ========================================================================== */
+.secao-tecnologias {
+    padding: 60px clamp(16px, 6vw, 80px);
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid #1e293b;
+}
+
+.secao-tecnologias h2 {
+    color: #ffffff;
+    font-size: clamp(1rem, 3.5vw, 1.3rem);
+    letter-spacing: 4px;
+    margin-bottom: 32px;
+}
+
+.tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tech-item {
+    background-color: #0d1117;
+    border: 1px solid #1e293b;
+    color: #94a3b8;
+    font-size: clamp(0.75rem, 2vw, 0.82rem);
+    letter-spacing: 1px;
+    padding: 10px 18px;
+    border-radius: 2px;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.tech-item:hover {
+    border-color: #ff0000;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   SEÇÃO SOBRE O PROJETO
+   ========================================================================== */
+.secao-projeto {
+    padding: 60px clamp(16px, 6vw, 80px);
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid #1e293b;
+}
+
+.secao-projeto h2 {
+    color: #ffffff;
+    font-size: clamp(1rem, 3.5vw, 1.3rem);
+    letter-spacing: 4px;
+    margin-bottom: 24px;
+}
+
+.secao-projeto p {
+    color: #94a3b8;
+    line-height: 1.9;
+    max-width: 750px;
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+.rodape {
+    border-top: 1px solid #1e293b;
+    padding: 30px clamp(16px, 6vw, 80px);
+    text-align: center;
+}
+
+.rodape p {
+    color: #334155;
+    font-size: clamp(0.68rem, 2vw, 0.78rem);
+    letter-spacing: 2px;
 }
