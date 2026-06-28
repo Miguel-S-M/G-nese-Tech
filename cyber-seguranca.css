@@ -336,3 +336,213 @@ body.conteudo-animado .page-content {
     box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
     transform: translateY(-4px);
 }
+
+
+        .painel-scanner {
+            position: relative;
+            width: 100%;
+            max-width: 720px;
+            margin: 40px auto;
+            background-color: #0a0e16;
+            border: 1px solid #1e293b;
+            border-top: 3px solid #ff0000;
+            border-radius: 4px;
+            overflow: hidden;
+            padding: 0;
+        }
+        .scanner-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            border-bottom: 1px solid #1e293b;
+            background-color: #080a0f;
+        }
+
+        .scanner-titulo {
+            color: #ff0000;
+            font-size: 0.78rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .scanner-led {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ff0000;
+            box-shadow: 0 0 8px #ff0000;
+            animation: pisca-led 1s infinite;
+        }
+
+        @keyframes pisca-led {
+            0%, 100% { opacity: 1; box-shadow: 0 0 8px #ff0000; }
+            50%       { opacity: 0.2; box-shadow: none; }
+        }
+        .scanner-corpo {
+            position: relative;
+            height: 280px;
+            background-color: #050710;
+        }
+        .scanner-corpo::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 27px,
+                    rgba(30, 41, 59, 0.5) 27px,
+                    rgba(30, 41, 59, 0.5) 28px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 59px,
+                    rgba(30, 41, 59, 0.25) 59px,
+                    rgba(30, 41, 59, 0.25) 60px
+                );
+            z-index: 0;
+        }
+        .scanner-linha {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                rgba(255, 0, 0, 0.3) 20%,
+                #ff0000 50%,
+                rgba(255, 0, 0, 0.3) 80%,
+                transparent 100%
+            );
+            box-shadow: 0 0 12px 4px rgba(255, 0, 0, 0.4);
+            z-index: 2;
+            animation: varredura-scanner 2.8s linear infinite;
+        }
+        .scanner-linha::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(
+                180deg,
+                rgba(255, 0, 0, 0.12) 0%,
+                transparent 100%
+            );
+        }
+
+        @keyframes varredura-scanner {
+            0%   { top: 0%; }
+            100% { top: 100%; }
+        }
+        .scanner-alerta {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 1px solid #ff0000;
+            background: rgba(255, 0, 0, 0.3);
+            z-index: 3;
+            animation: pulso-alerta 2s ease-in-out infinite;
+        }
+
+        .scanner-alerta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            animation: onda-alerta 2s ease-out infinite;
+        }
+
+        @keyframes pulso-alerta {
+            0%, 100% { opacity: 1; }
+            50%       { opacity: 0.3; }
+        }
+
+        @keyframes onda-alerta {
+            0%   { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+            100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
+        }
+        .scanner-status {
+            position: relative;
+            z-index: 4;
+            padding: 16px 20px;
+            border-top: 1px solid #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background-color: #080a0f;
+        }
+
+        .scanner-status-texto {
+            color: #00ff41;
+            font-size: 0.82rem;
+            letter-spacing: 2px;
+            overflow: hidden;
+            white-space: nowrap;
+
+            animation: digitar-texto 3s steps(28, end) infinite;
+            border-right: 2px solid #00ff41;
+            animation-name: digitar-texto, cursor-pisca;
+            animation-duration: 3s, 0.7s;
+            animation-timing-function: steps(28, end), step-end;
+            animation-iteration-count: infinite, infinite;
+        }
+
+        @keyframes digitar-texto {
+            0%   { width: 0; }
+            60%  { width: 100%; }
+            90%  { width: 100%; }
+            100% { width: 0; }
+        }
+
+        @keyframes cursor-pisca {
+            0%, 100% { border-right-color: #00ff41; }
+            50%       { border-right-color: transparent; }
+        }
+
+     
+        .scanner-progresso-container {
+            padding: 0 20px 16px 20px;
+            background-color: #080a0f;
+        }
+
+        .scanner-progresso-label {
+            color: #64748b;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .scanner-barra-outer {
+            width: 100%;
+            height: 4px;
+            background-color: #1e293b;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .scanner-barra-inner {
+            height: 100%;
+            background: linear-gradient(90deg, #ff0000, #ff6600);
+            box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+            animation: preencher-barra 2.8s linear infinite;
+        }
+
+        @keyframes preencher-barra {
+            0%   { width: 0%; }
+            100% { width: 100%; }
+        }
+    

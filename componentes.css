@@ -108,9 +108,6 @@ img:hover {
     border-color: #8f0000;
 }
 
-/* ==========================================================================
-   RODAPÉ DO SISTEMA
-   ========================================================================== */
 .rodape-sistema {
     width: 100% !important;
     text-align: center !important;
@@ -124,4 +121,119 @@ img:hover {
     color: #64748b !important;
     font-size: 0.75rem !important;
     letter-spacing: 1px !important;
+}
+
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 90px 20px 20px 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    p,
+    li {
+        font-size: 0.95rem;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .menu-superior {
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-reduzida {
+        font-size: 1.3rem;
+    }
+
+    .nav-lista {
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .video-container iframe {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 80px 15px 15px 15px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+        letter-spacing: 1px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    p,
+    li {
+        font-size: 0.9rem;
+    }
+
+    .menu-superior {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 15px;
+    }
+
+    .logo-reduzida {
+        font-size: 1.1rem;
+    }
+
+    .nav-lista {
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .video-container iframe {
+        width: 100%;
+    }
+}
+
+iframe {
+    display: block;
+    width: 800px;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 30px auto;
+    border: 1px solid #1e293b;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+iframe:hover {
+    border-color: #ff0000;
 }

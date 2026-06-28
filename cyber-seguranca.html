@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link rel="icon" href="cybericon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyber Segurança</title>
@@ -9,8 +10,6 @@
     <link rel="icon" href="gg.png">
 </head>
 <body>
-
-    <!-- ===================== INTRO OVERLAY ===================== -->
     <div id="intro-overlay">
         <canvas id="intro-canvas"></canvas>
         <div id="intro-scanline"></div>
@@ -27,8 +26,6 @@
 
         <div id="intro-skip">[CLIQUE PARA PULAR]</div>
     </div>
-
-    <!-- ===================== MENU ===================== -->
     <header class="menu-superior">
         <div class="logo-reduzida glitch" data-text="G_T">G_T</div>
         <nav>
@@ -38,9 +35,42 @@
         </nav>
     </header>
 
-    <!-- ===================== CONTEÚDO ===================== -->
     <div class="page-content">
         <h1>Cyber Segurança</h1>
+        <div class="painel-scanner">
+
+            <div class="scanner-header">
+                <span class="scanner-titulo">// SCANNER DE VULNERABILIDADE v2.4</span>
+                <span class="scanner-led"></span>
+            </div>
+
+            <div class="scanner-corpo">
+                <div class="scanner-linha"></div>
+                <div class="scanner-alerta" style="top: 22%; left: 18%;"></div>
+                <div class="scanner-alerta" style="top: 55%; left: 42%; animation-delay: 0.4s;"></div>
+                <div class="scanner-alerta" style="top: 38%; left: 71%; animation-delay: 0.9s;"></div>
+                <div class="scanner-alerta" style="top: 75%; left: 28%; animation-delay: 1.3s;"></div>
+                <div class="scanner-alerta" style="top: 15%; left: 85%; animation-delay: 0.6s;"></div>
+                <div class="scanner-alerta" style="top: 65%; left: 60%; animation-delay: 1.8s;"></div>
+                <div class="scanner-alerta" style="top: 82%; left: 78%; animation-delay: 0.2s;"></div>
+            </div>
+
+            <div class="scanner-status">
+                <span class="scanner-status-texto">ANALISANDO PORTAS DE REDE...</span>
+            </div>
+
+            <div class="scanner-progresso-container">
+                <div class="scanner-progresso-label">
+                    <span>VARREDURA ATIVA</span>
+                    <span>PORTAS: 0–65535</span>
+                </div>
+                <div class="scanner-barra-outer">
+                    <div class="scanner-barra-inner"></div>
+                </div>
+            </div>
+
+        </div>
+        <!-- ===================== FIM SCANNER ===================== -->
 
         <p>Cibersegurança é a prática de proteger sistemas, redes, dispositivos e dados contra ataques cibernéticos,
            garantindo confidencialidade, integridade e disponibilidade das informações.</p>
@@ -125,4 +155,3 @@
 
 </body>
 </html>
-

@@ -3,6 +3,7 @@
    ========================================================================== */
    html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
    body { 
     background-color: #ffffff;
@@ -12,6 +13,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -27,21 +29,26 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 40px;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    padding: clamp(14px, 3vw, 25px) clamp(16px, 5vw, 40px);
     background-color: rgba(8, 10, 15, 0.9);
     border-bottom: 1px solid #1e293b;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 100;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
 }
 
 .logo-reduzida {
-    font-size: 2.7rem;
+    font-size: clamp(1.6rem, 5vw, 2.7rem);
     font-weight: bold;
     color: #1a231a; 
     letter-spacing: 2px;
     cursor: pointer;
+    flex-shrink: 0;
     transition: color 0.3s ease, text-shadow 0.3s ease; 
 }
 
@@ -58,18 +65,33 @@ body {
 .nav-lista {
     display: flex;
     list-style: none;
-    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: clamp(10px, 3vw, 30px);
 }
 
 .nav-link {
     color: #94a3b8;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: clamp(0.75rem, 2.2vw, 1rem);
+    white-space: nowrap;
     transition: color 0.3s;
 }
 
 .nav-link:hover {
     color: #ff0000;
+}
+
+@media (max-width: 640px) {
+    .menu-superior {
+        justify-content: center;
+        text-align: center;
+    }
+    .nav-lista {
+        justify-content: center;
+        width: 100%;
+        gap: 14px 18px;
+    }
 }
 
 /* ==========================================================================
@@ -126,23 +148,25 @@ body {
    SEÇÃO HERO (INTRODUÇÃO)
    ========================================================================== */
 .secao-hero {
-    height: 65vh;
+    min-height: 65vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 100px;
+    padding: clamp(110px, 22vw, 150px) 20px 40px 20px;
 }
 
 .container-titulo {
     text-align: center;
+    width: 100%;
 }
 
 #titulo-principal {
-    font-size: 4.5rem;
+    font-size: clamp(2.2rem, 10vw, 4.5rem);
     color: #ffffff;
     text-transform: uppercase;
-    letter-spacing: 6px;
+    letter-spacing: clamp(2px, 1vw, 6px);
     opacity: 0; 
+    word-break: break-word;
     transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.5s ease;
 }
 
@@ -154,8 +178,9 @@ body {
 .subtitulo-efeito {
     color: #64748b;
     margin-top: 15px;
-    font-size: 1.1rem;
-    letter-spacing: 3px;
+    font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+    letter-spacing: clamp(1px, 0.5vw, 3px);
+    padding: 0 10px;
 }
 
 /* ==========================================================================
@@ -164,44 +189,53 @@ body {
 .secao-hub {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 40px 20px 120px 20px;
-}
-
+    padding: 40px clamp(16px, 5vw, 70px) 120px clamp(16px, 5vw, 70px);
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
 .linha-decorativa {
     width: 100%;
     height: 1px;
     background: linear-gradient(90deg, transparent, #ff0000, transparent);
     margin-bottom: 60px;
 }
-
 .grid-monolitos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 35px;
-    margin-left: 116px;
- justify-content: space-between;
- margin-right: 70px;
-}
 
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+    width: 100%;
+    max-width: 1100px; 
+    justify-content: center;
+    gap: clamp(20px, 4vw, 35px);
+}
 .cartao-monolito {
     background-color: #0f131a;
     aspect-ratio: 1 / 1.4142; 
     border: 1px solid #1e293b;
     border-radius: 4px;
-    padding: 30px;
+    padding: clamp(20px, 4vw, 30px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; 
+    align-items: stretch; 
     text-decoration: none;
     position: relative;
     overflow: hidden;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s, border-color 0.4s;
+    width: 100%;
 }
 
-.cartao-monolito:hover {
-    transform: translateY(-12px);
-    background-color: #141a24;
-    border-color: rgba(138, 3, 3, 0.3);
+@media (max-width: 480px) {
+    .cartao-monolito { aspect-ratio: auto; min-height: 320px; }
+}
+
+@media (hover: hover) {
+    .cartao-monolito:hover {
+        transform: translateY(-12px);
+        background-color: #141a24;
+        border-color: rgba(138, 3, 3, 0.3);
+    }
 }
 
 /* Controle da Imagem de Fundo do Cartão */
@@ -216,11 +250,12 @@ body {
 }
 
 /* Quando passa o mouse, a imagem escurece e vai para o fundo para dar leitura ao texto */
-.cartao-monolito:hover class.cartao-img-fundo,
-.cartao-monolito:hover .cartao-img-fundo {
-    opacity: 0.15;
-    filter: blur(2px);
-    transform: scale(1.05);
+@media (hover: hover) {
+    .cartao-monolito:hover .cartao-img-fundo {
+        opacity: 0.15;
+        filter: blur(2px);
+        transform: scale(1.05);
+    }
 }
 
 .borda-efeito {
@@ -249,26 +284,55 @@ body {
     z-index: 2;
 }
 
-.cartao-monolito:hover .numero-id {
-    animation: marcador-hack 0.3s infinite steps(2);
-    color: #ffffff; 
+@media (hover: hover) {
+    .cartao-monolito:hover .numero-id {
+        animation: marcador-hack 0.3s infinite steps(2);
+        color: #ffffff; 
+    }
 }
 
 .conteudo-card {
-    transform: translateY(20px);
-    opacity: 0;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
     z-index: 2;
 }
 
-.cartao-monolito:hover .conteudo-card {
-    transform: translateY(0);
-    opacity: 1;
+/* Em telas com mouse, o texto fica revelado apenas no hover (efeito original) */
+@media (hover: hover) {
+    .conteudo-card {
+        transform: translateY(20px);
+        opacity: 0;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
+    }
+    .cartao-monolito:hover .conteudo-card {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    /* Em telas com mouse, escurece a imagem de fundo para garantir legibilidade quando focado via teclado */
+    .cartao-monolito:focus-visible .cartao-img-fundo {
+        opacity: 0.15;
+        filter: blur(2px);
+    }
+    .cartao-monolito:focus-visible .conteudo-card {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Em telas touch (sem hover), o texto fica sempre visível com um leve escurecimento de fundo para legibilidade */
+@media (hover: none) {
+    .cartao-img-fundo {
+        opacity: 0.25;
+    }
+    .conteudo-card {
+        background: linear-gradient(180deg, transparent, rgba(8,10,15,0.55) 40%, rgba(8,10,15,0.85));
+        margin: -16px -16px 0 -16px;
+        padding: 16px;
+        border-radius: 0 0 4px 4px;
+    }
 }
 
 .titulo-card {
     color: #ffffff;
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
     margin-bottom: 15px;
     text-transform: uppercase;
 }
@@ -316,7 +380,7 @@ body {
 .secao-depoimentos {
     max-width: 800px;
     margin: 60px auto;
-    padding: 0 20px;
+    padding: 0 clamp(16px, 5vw, 20px);
 }
 
 /* Esconde as caixas de seleção padrão do navegador */
@@ -326,8 +390,12 @@ input[name="depoimento-controle"] {
 
 .slider-depoimentos {
     width: 100%;
-    min-height: 220px;
+    min-height: 260px;
     position: relative;
+}
+
+@media (max-width: 480px) {
+    .slider-depoimentos { min-height: 320px; }
 }
 
 /* Configuração padrão de todos os cartões (Começam invisíveis) */
@@ -338,7 +406,7 @@ input[name="depoimento-controle"] {
     width: 100%;
     background-color: #0f131a;
     border: 1px solid #1e293b;
-    padding: 40px;
+    padding: clamp(24px, 6vw, 40px);
     border-radius: 4px;
     text-align: center;
     opacity: 0;
@@ -348,7 +416,7 @@ input[name="depoimento-controle"] {
 }
 
 .texto-depoimento {
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 2.6vw, 1.1rem);
     line-height: 1.6;
     color: #e2e8f0;
     font-style: italic;
@@ -382,16 +450,18 @@ input[name="depoimento-controle"] {
 
 /* Estilo básico das bolinhas de navegação */
 .botao-nav {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     background-color: #1e293b;
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.botao-nav:hover {
-    background-color: rgba(255, 0, 0, 0.514);
+@media (hover: hover) {
+    .botao-nav:hover {
+        background-color: rgba(255, 0, 0, 0.514);
+    }
 }
 
 #depoimento-1:checked ~ .navegacao-css #label-1,
@@ -410,13 +480,13 @@ background-size: cover;
 .secao-contato {
     max-width: 1100px;
     margin: 80px auto 40px auto;
-    padding: 0 20px;
+    padding: 0 clamp(16px, 5vw, 20px);
 }
 
 .container-contato {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: clamp(20px, 4vw, 40px);
     margin-top: 20px;
 }
 
@@ -424,7 +494,7 @@ background-size: cover;
     background-color: #0f131a;
     border: 1px solid #1e293b;
     border-left: 4px solid #ff0000;
-    padding: 35px;
+    padding: clamp(22px, 5vw, 35px);
     border-radius: 4px;
 }
 
@@ -461,12 +531,13 @@ background-size: cover;
 .dados-tech {
     color: #ffffff;
     font-size: 0.95rem;
+    word-break: break-word;
 }
 
 .formulario-hack {
     background-color: #0f131a;
     border: 1px solid #1e293b;
-    padding: 35px;
+    padding: clamp(22px, 5vw, 35px);
     border-radius: 4px;
     display: flex;
     flex-direction: column;
@@ -492,6 +563,7 @@ background-size: cover;
     padding: 12px 15px;
     font-size: 0.9rem;
     border-radius: 4px;
+    width: 100%;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
@@ -512,13 +584,16 @@ background-size: cover;
     letter-spacing: 2px;
     position: relative;
     overflow: hidden;
+    min-height: 48px;
     transition: background-color 0.3s, color 0.3s;
 }
 
-.botao-enviar-tech:hover {
-    background-color: #ff0000;
-    color: #080a0f;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+@media (hover: hover) {
+    .botao-enviar-tech:hover {
+        background-color: #ff0000;
+        color: #080a0f;
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+    }
 }
 
 /* ==========================================================================
