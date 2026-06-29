@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link rel="icon" href="img/historia.jpeg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>História da Computação — Gênese Tech</title>
@@ -19,6 +18,9 @@
         </nav>
     </header>
 
+
+<!-- introducao -->
+
     <main class="container-historia">
 
         <h1>História da Computação</h1>
@@ -30,6 +32,10 @@
                 A computação passou por milhares de anos de evolução até chegar aos
                 computadores modernos que utilizamos atualmente.
             </p>
+            
+            
+            <!-- linha do tempo -->
+
 
             <div class="grid-historia">
                 <article>
@@ -45,7 +51,7 @@
                 </article>
 
                 <article>
-                    <img src="img/Charles_Babbage.jpg" alt="Charles Babbage">
+                    <img src="img/maqana.png" alt="maquina analitica">
                     <h3>1837 - Máquina Analítica</h3>
                     <p>Projeto considerado precursor dos computadores modernos.</p>
                 </article>
@@ -70,31 +76,9 @@
             </div>
         </section>
 
-        <section>
-            <h2 id="gal-his">// Galeria da Evolução</h2>
 
-            <div class="galeria-evolucao">
-                <figure>
-                    <img src="img/abaco.jpeg" alt="Ábaco">
-                    <figcaption>Ábaco</figcaption>
-                </figure>
+        <!-- personagens importantes -->
 
-                <figure>
-                    <img src="img/eniac1.png" alt="ENIAC">
-                    <figcaption>ENIAC</figcaption>
-                </figure>
-
-                <figure>
-                    <img src="img/pc-antigo.jpeg" alt="PC Antigo">
-                    <figcaption>Computador Pessoal</figcaption>
-                </figure>
-
-                <figure>
-                    <img src="img/notebook.jpeg" alt="Notebook">
-                    <figcaption>Computação Moderna</figcaption>
-                </figure>
-            </div>
-        </section>
 
         <section>
             <h2 id="per-his">// Personagens Importantes</h2>
@@ -120,7 +104,97 @@
             </div>
         </section>
 
-        <section>
+    </main>
+
+
+<!-- termos da computacao <dl> -->
+
+
+    <section>
+
+    <h2>// Termos da Computação</h2>
+
+    <dl>
+        <dt>Ábaco</dt>
+        <dd>Primeiro instrumento utilizado para realizar cálculos matemáticos.</dd>
+
+        <dt>Pascalina</dt>
+        <dd>Calculadora mecânica criada por Blaise Pascal em 1642.</dd>
+
+        <dt>Máquina Analítica</dt>
+        <dd>Projeto de computador mecânico criado por Charles Babbage.</dd>
+
+        <dt>ENIAC</dt>
+        <dd>Um dos primeiros computadores eletrônicos de uso geral.</dd>
+
+        <dt>Inteligência Artificial</dt>
+        <dd>Área da computação que desenvolve sistemas capazes de aprender e tomar decisões.</dd>
+    </dl>
+
+</section>
+
+
+<!-- exemplo de codigo <pre> <code> -->
+
+
+<section>
+
+    <h2>// Exemplo de Código</h2>
+
+    <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+
+    printf("Olá, Mundo!");
+
+    return 0;
+
+}
+    </code></pre>
+
+</section>
+
+
+<!-- interrativo javascript -->
+
+<section class="curiosidades">
+
+    <h2>// Curiosidade da Computação</h2>
+
+    <p id="curiosidade">
+        Clique no botão para descobrir uma curiosidade.
+    </p>
+
+    <button onclick="mostrarCuriosidade()" class="botao-curiosidade">
+        Mostrar Curiosidade
+    </button>
+
+</section>
+
+
+<!-- Vídeo do YouTube -->
+
+<section class="video-computacao">
+
+    <div class="videos">
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/mFdUqqwzbVs?si=JH23StPoT0q8VjmB"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
+    </div>
+</section>
+
+<!-- Conclusão -->
+
+
+    <section>
             <h2 id="con-his">// Conclusão</h2>
             <p id="con-p-his">
                 A história da computação demonstra como a tecnologia evoluiu desde
@@ -129,12 +203,21 @@
             </p>
         </section>
 
-    </main>
+
+    <!-- Rodapé -->
+
 
     <footer class="rodape-sistema">
         <p class="texto-rodape">© 2026 GÊNESE TECH // PROTEÇÃO DE DADOS ATIVA // ALL RIGHTS RESERVED.</p>
     </footer>
 
     <script src="hub.js"></script>
+
+    <!-- Easter Egg -->
+
+    <div id="easterEgg">
+    MODO SECRETO ATIVADO! Bem-vindo à origem da computação.
+</div>
+
 </body>
 </html>
