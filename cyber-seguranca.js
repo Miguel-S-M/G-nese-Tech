@@ -139,4 +139,57 @@
         canvas.width  = window.innerWidth;
         canvas.height = window.innerHeight;
     });
+
+
+
+
+
+    
+    /* ---- Robô perseguindo vírus (clique na logo) ---- */
+    const logo       = document.querySelector('.logo-reduzida');
+    const chaseLayer = document.getElementById('robo-chase-layer');
+    const chaseTrack = document.querySelector('.robo-chase-track');
+    const chaseVirus  = document.querySelector('.robo-chase-virus');
+    const chaseRobot  = document.querySelector('.robo-chase-robot');
+    const chaseZap    = document.querySelector('.robo-chase-zap');
+
+    let chaseEmAndamento = false;
+
+    function dispararPerseguicao() {
+        if (chaseEmAndamento) return;
+        chaseEmAndamento = true;
+
+        const topoAleatorio = 25 + Math.random() * 50; // entre 25% e 75% da altura
+        chaseTrack.style.setProperty('--chase-top', `${topoAleatorio}%`);
+        chaseTrack.style.setProperty('--chase-dur', '4.2s');
+
+        chaseLayer.classList.add('ativo');
+
+        [chaseVirus, chaseRobot].forEach(el => {
+            el.classList.remove('correndo');
+        });
+        chaseZap.classList.remove('zap-ativo');
+
+        // força reflow para reiniciar a animação a cada clique
+        void chaseVirus.offsetWidth;
+        void chaseRobot.offsetWidth;
+
+        chaseVirus.classList.add('correndo');
+        chaseRobot.classList.add('correndo');
+
+        // robô alcança o vírus perto do fim do percurso
+        setTimeout(() => {
+            chaseZap.style.left = '92%';
+            chaseZap.classList.add('zap-ativo');
+        }, 3500);
+
+        setTimeout(() => {
+            chaseLayer.classList.remove('ativo');
+            chaseEmAndamento = false;
+        }, 4400);
+    }
+
+    if (logo) {
+        logo.addEventListener('click', dispararPerseguicao);
+    }
 })();
