@@ -435,10 +435,124 @@ body {
     border-top: 1px solid #1e293b;
     padding: 30px clamp(16px, 6vw, 80px);
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .rodape p {
     color: #334155;
     font-size: clamp(0.68rem, 2vw, 0.78rem);
     letter-spacing: 2px;
+}
+
+
+
+
+#robot{
+    position: absolute;
+    bottom: -15px;   /* aumenta ou diminui até ficar sobre a linha */
+    left: -80px;
+
+    width: 90px;
+    height: 90px;
+
+    background: url("img/robo.png") no-repeat center;
+    background-size: contain;
+
+    animation: andar 45s linear infinite;
+}
+
+@keyframes andar{
+    from{
+        left: -80px;
+        transform: scaleX(1);
+    }
+
+    to{
+        left: calc(100% + 80px);
+        transform: scaleX(1);
+    }
+}
+
+
+
+
+/* =====================================
+   AJUSTES FINAIS PARA CELULAR
+===================================== */
+
+@media (max-width:768px){
+
+    .hero-representantes{
+        padding:120px 15px 60px;
+    }
+
+    .hero-tag{
+        letter-spacing:2px;
+        font-size:.75rem;
+    }
+
+    .card-header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .card-titulo{
+        text-align:center;
+    }
+
+    .card-representante p{
+        text-align:center;
+    }
+
+    .tags{
+        justify-content:center;
+    }
+
+    .tecnologias{
+        justify-content:center;
+    }
+
+    .secao-tecnologias h2,
+    .secao-projeto h2{
+        text-align:center;
+        letter-spacing:2px;
+    }
+
+    .secao-projeto p{
+        text-align:center;
+    }
+
+    .rodape p{
+        line-height:1.7;
+    }
+}
+
+@media (max-width:480px){
+
+    .hero-representantes h1{
+        font-size:1.8rem;
+    }
+
+    .hero-representantes p{
+        font-size:.9rem;
+    }
+
+    .avatar-placeholder{
+        width:60px;
+        height:60px;
+    }
+
+    .tech-item{
+        width:100%;
+        text-align:center;
+    }
+
+    #robot{
+        width:60px;
+        height:60px;
+        bottom:-10px;
+        animation: andar 60s linear infinite;
+    }
+
 }
