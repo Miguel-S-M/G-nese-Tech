@@ -337,6 +337,133 @@ body.conteudo-animado .page-content {
     transform: translateY(-4px);
 }
 
+/* ==========================================================================
+   ROBÔ PERSEGUINDO VÍRUS — easter egg do clique na logo
+   ========================================================================== */
+
+#robo-chase-layer {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9998;
+    overflow: hidden;
+    display: none;
+}
+
+#robo-chase-layer.ativo {
+    display: block;
+}
+
+.robo-chase-track {
+    position: absolute;
+    top: var(--chase-top, 70%);
+    left: 0;
+    width: 100%;
+    height: 0;
+}
+
+.robo-chase-virus,
+.robo-chase-robot {
+    position: absolute;
+    top: 0;
+    transform: translate(-50%, -50%);
+    will-change: left, transform;
+}
+
+.robo-chase-virus svg,
+.robo-chase-robot svg {
+    display: block;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 60, 0.5));
+}
+
+.robo-chase-robot svg {
+    filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.55));
+}
+
+/* corrida horizontal */
+.robo-chase-virus.correndo {
+    animation: virusFugindo var(--chase-dur, 4.5s) linear forwards;
+}
+
+.robo-chase-robot.correndo {
+    animation: roboPerseguindo var(--chase-dur, 4.5s) linear forwards;
+}
+
+@keyframes virusFugindo {
+    0%   { left: -8%; }
+    100% { left: 108%; }
+}
+
+@keyframes roboPerseguindo {
+    0%   { left: -20%; }
+    100% { left: 100%; }
+}
+
+/* balanço das pernas/corpo enquanto corre */
+.robo-chase-robot .perna-esq {
+    animation: passoPerna 0.28s ease-in-out infinite alternate;
+    transform-origin: top center;
+}
+.robo-chase-robot .perna-dir {
+    animation: passoPerna 0.28s ease-in-out infinite alternate-reverse;
+    transform-origin: top center;
+}
+
+@keyframes passoPerna {
+    0%   { transform: rotate(-22deg); }
+    100% { transform: rotate(22deg); }
+}
+
+.robo-chase-virus .espinho {
+    animation: espinhoTremor 0.35s ease-in-out infinite alternate;
+    transform-origin: center;
+}
+
+@keyframes espinhoTremor {
+    0%   { transform: scale(1); }
+    100% { transform: scale(1.12); }
+}
+
+.robo-chase-robot .robo-olho {
+    animation: olhoPisca 1.6s steps(1) infinite;
+}
+
+@keyframes olhoPisca {
+    0%, 90%, 100% { opacity: 1; }
+    95%            { opacity: 0.2; }
+}
+
+/* texto que sobe quando o robô alcança o vírus */
+.robo-chase-zap {
+    position: absolute;
+    top: 0;
+    transform: translate(-50%, -50%);
+    font-family: 'Courier New', monospace;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: #00ff41;
+    text-shadow: 0 0 10px #00ff41;
+    letter-spacing: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.robo-chase-zap.zap-ativo {
+    animation: zapSobe 1.1s ease-out forwards;
+}
+
+@keyframes zapSobe {
+    0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
+    15%  { opacity: 1; transform: translate(-50%, -60%) scale(1.15); }
+    100% { opacity: 0; transform: translate(-50%, -160%) scale(1); }
+}
+
+.logo-reduzida {
+    cursor: pointer;
+}
+
 
         .painel-scanner {
             position: relative;
