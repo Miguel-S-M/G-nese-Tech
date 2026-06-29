@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;600&display=swap');
+
 /* BASE */
    html {
     scroll-behavior: smooth;
@@ -23,7 +25,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Exo 2', sans-serif;
+    }
+
+h1,
+h2,
+h3,
+.logo-reduzida,
+.nav-link{
+    font-family: 'Orbitron', sans-serif;
 }
 
 body {
@@ -164,8 +174,8 @@ h1 {
 
 /* imagens */
 img {
-    width: 250px;
-    height: 180px;
+    width: 350px;
+    height: 300px;
     object-fit: cover;
     border-radius: 10px;
     display: block;
@@ -235,8 +245,8 @@ section article img[alt*="Ada"],
 section article img[alt*="Charles"],
 section article img[alt*="Alan"] {
     border-radius: 50%;
-    width: 180px;
-    height: 180px;
+    width: 250px;
+    height: 250px;
 }
 /* PERSONAGENS - TITULO */
 #per-his {
@@ -276,9 +286,111 @@ section article img[alt*="Alan"] {
     color: red;
 }
 
+.videos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
 
 
+.secao-definicoes{
+    margin-top:70px;
+}
 
+dl{
+    background:#0f131a;
+    border:1px solid #1e293b;
+    padding:30px;
+    border-radius:10px;
+}
+
+dt{
+    color:#ff0000;
+    font-size:1.3rem;
+    margin-top:20px;
+    font-weight:bold;
+}
+
+dd{
+    color:#94a3b8;
+    margin-left:25px;
+    margin-top:10px;
+    line-height:1.8;
+}
+
+.codigo-historico{
+    margin-top:80px;
+}
+
+pre{
+    background:#111827;
+    color:#00ff7f;
+    border:1px solid #ff0000;
+    border-radius:10px;
+    padding:25px;
+    overflow:auto;
+}
+
+
+.curiosidades{
+
+    text-align:center;
+    margin:80px auto;
+
+}
+
+.botao-curiosidade{
+
+    margin-top:20px;
+    padding:15px 30px;
+    border:none;
+    background:#ff0000;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+    border-radius:8px;
+    transition:.3s;
+
+}
+
+.botao-curiosidade:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 20px red;
+
+}
+
+
+#easterEgg{
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0f131a;
+    color: #00ff66;
+    border: 2px solid #ff0000;
+    padding: 20px 35px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    box-shadow: 0 0 20px red;
+    display: none;
+    z-index: 9999;
+    animation: brilho 1s infinite alternate;
+}
+
+@keyframes brilho{
+
+    from{
+        box-shadow:0 0 10px red;
+    }
+
+    to{
+        box-shadow:0 0 30px #ff0000;
+    }
+
+}
 
 
 /* ===========================
