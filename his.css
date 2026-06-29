@@ -189,7 +189,7 @@ section {
 /* cards */ 
 
 article {
-    background: rgba(15, 23, 42, 0.8);
+    background: #080a0f;
     border: 1px solid #1e293b;
     border-left: 4px solid #ff0000;
     border-radius: 10px;
@@ -274,4 +274,107 @@ section article img[alt*="Alan"] {
 #gal-his{
     margin-left: 100px;
     color: red;
+}
+
+
+
+
+
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+
+@media (max-width: 768px){
+
+    .menu-superior{
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .nav-lista{
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    h1{
+        font-size: 2rem;
+        margin-top: 180px;
+        letter-spacing: 2px;
+        padding: 0 15px;
+    }
+
+    img{
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+    }
+
+    article{
+        margin: 20px 15px;
+        padding: 20px;
+    }
+
+    section{
+        padding: 25px 15px;
+    }
+
+    figure{
+        display: block;
+        margin: 20px auto;
+    }
+
+    #intro-his,
+    #per-his,
+    #gal-his,
+    #con-his{
+        margin-left: 0;
+        text-align: center;
+    }
+
+    #intro-p-his,
+    #con-p-his{
+        text-align: justify;
+        padding: 0 10px;
+    }
+
+    p{
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+    .texto-rodape{
+        font-size: 0.7rem;
+        padding: 0 10px;
+    }
+}
+
+
+/* CELULARES PEQUENOS */
+
+@media (max-width:480px){
+
+    h1{
+        font-size: 1.7rem;
+    }
+
+    .logo-reduzida{
+        font-size: 2rem;
+    }
+
+    .nav-link{
+        font-size: .9rem;
+    }
+
+    article{
+        margin: 15px 10px;
+        padding: 15px;
+    }
+
+    img{
+        max-width: 260px;
+    }
+
 }
