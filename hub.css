@@ -1,4 +1,4 @@
-/*============================================= =============================
+*============================================= =============================
    CONFIGURAÇÕES BASE
    ========================================================================== */
    html {
@@ -153,6 +153,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: clamp(110px, 22vw, 150px) 20px 40px 20px;
+    scroll-margin-top: 90px;
 }
 
 .container-titulo {
@@ -192,7 +193,9 @@ body {
     padding: 40px clamp(16px, 5vw, 70px) 120px clamp(16px, 5vw, 70px);
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    scroll-margin-top: 90px;
+}
 .linha-decorativa {
     width: 100%;
     height: 1px;
@@ -372,6 +375,12 @@ body {
         filter: hue-rotate(360deg);
         opacity: 1;
     }
+}
+
+#Depoimentos,
+#Contate-nos {
+    display: block;
+    scroll-margin-top: 90px;
 }
 
 /* ==========================================================================
@@ -613,3 +622,4 @@ background-size: cover;
     font-size: 0.75rem;
     letter-spacing: 1px;
 }
+
