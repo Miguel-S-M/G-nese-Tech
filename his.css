@@ -189,8 +189,8 @@ img {
 /* linha vermelha */
 
 section {
-    border-top: 2px solid #ff0000;
-    padding-top: 30px;
+    border-top: 2px solid #080a0f;
+    padding-top: 15px;
 }
 
 
@@ -393,6 +393,13 @@ pre{
 }
 
 
+.container-historia{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+
 /* ===========================
    RESPONSIVIDADE
 =========================== */
@@ -430,7 +437,7 @@ pre{
     }
 
     section{
-        padding: 25px 15px;
+        padding: 15px 10px;
     }
 
     figure{
