@@ -212,16 +212,12 @@ body {
     margin: 0 auto;
     padding: 20px clamp(16px, 5vw, 40px) clamp(50px, 12vw, 80px) clamp(16px, 5vw, 40px);
 }
-
-/* Linha decorativa reutilizável */
 .linha-decorativa {
     width: 100%;
     height: 1px;
     background: linear-gradient(90deg, transparent, #ff0000, transparent);
     margin: 50px 0;
 }
-
-/* Bloco de secção didática */
 .secao-didatica {
     margin-bottom: 60px;
 }
@@ -243,7 +239,6 @@ body {
     line-height: 1.8;
 }
 
-/* Cards de comparação (simétrica vs assimétrica) */
 .grid-comparacao {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -338,8 +333,6 @@ body {
     color: inherit;
     opacity: 0.7;
 }
-
-/* Diagrama HTTPS — visual de fluxo em texto */
 .diagrama-https {
     background: #060810;
     border: 1px solid #1e293b;
