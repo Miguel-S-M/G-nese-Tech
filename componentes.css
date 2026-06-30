@@ -13,6 +13,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    box-sizing: border-box;
     background-color: #080a0f;
     border-bottom: 1px solid #1e293b;
     padding: 20px 40px;
@@ -24,18 +25,18 @@ body {
 .logo-reduzida {
     font-size: 2.7rem;
     font-weight: bold;
-    color: #1a231a; 
+    color: #1a231a;
     letter-spacing: 2px;
     cursor: pointer;
-    transition: color 0.3s ease, text-shadow 0.3s ease; 
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .logo-reduzida:hover {
-    color: #ffffff; 
-    text-shadow: 
-        0 0 4px #ffffff,        
-        0 0 10px #ff0000,       
-        0 0 20px #ff0000,       
+    color: #ffffff;
+    text-shadow:
+        0 0 4px #ffffff,
+        0 0 10px #ff0000,
+        0 0 20px #ff0000,
         0 0 40px #ff0000;
 }
 
@@ -109,20 +110,19 @@ img:hover {
 }
 
 .rodape-sistema {
-    width: 100% !important;
-    text-align: center !important;
-    padding: 30px 20px !important;
-    border-top: 1px solid #1e293b !important;
-    background-color: #080a0f !important;
-    margin-top: 60px !important;
+    width: 100%;
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid #1e293b;
+    background-color: #080a0f;
+    margin-top: 60px;
 }
 
 .texto-rodape {
-    color: #64748b !important;
-    font-size: 0.75rem !important;
-    letter-spacing: 1px !important;
+    color: #64748b;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
 }
-
 
 @media (max-width: 768px) {
 
@@ -166,10 +166,7 @@ img:hover {
 
     .nav-link {
         font-size: 0.9rem;
-    }
-
-    .video-container iframe {
-        width: 100%;
+        margin-right: 20px;
     }
 }
 
@@ -212,28 +209,10 @@ img:hover {
 
     .nav-link {
         font-size: 0.85rem;
+        margin-right: 0;
     }
 
     img {
         width: 100%;
     }
-
-    .video-container iframe {
-        width: 100%;
-    }
-}
-
-iframe {
-    display: block;
-    width: 800px;
-    max-width: 100%;
-    aspect-ratio: 16 / 9;
-    margin: 30px auto;
-    border: 1px solid #1e293b;
-    border-radius: 4px;
-    transition: border-color 0.3s;
-}
-
-iframe:hover {
-    border-color: #ff0000;
 }
