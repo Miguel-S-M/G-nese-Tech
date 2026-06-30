@@ -155,7 +155,7 @@
         if (chaseEmAndamento) return;
         chaseEmAndamento = true;
 
-        const topoAleatorio = 25 + Math.random() * 50; // entre 25% e 75% da altura
+        const topoAleatorio = 25 + Math.random() * 50; 
         chaseTrack.style.setProperty('--chase-top', `${topoAleatorio}%`);
         chaseTrack.style.setProperty('--chase-dur', '4.2s');
 
