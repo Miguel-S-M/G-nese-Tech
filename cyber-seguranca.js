@@ -142,10 +142,6 @@
 
 
 
-
-
-    
-    /* ---- Robô perseguindo vírus (clique na logo) ---- */
     const logo       = document.querySelector('.logo-reduzida');
     const chaseLayer = document.getElementById('robo-chase-layer');
     const chaseTrack = document.querySelector('.robo-chase-track');
@@ -169,15 +165,11 @@
             el.classList.remove('correndo');
         });
         chaseZap.classList.remove('zap-ativo');
-
-        // força reflow para reiniciar a animação a cada clique
         void chaseVirus.offsetWidth;
         void chaseRobot.offsetWidth;
 
         chaseVirus.classList.add('correndo');
         chaseRobot.classList.add('correndo');
-
-        // robô alcança o vírus perto do fim do percurso
         setTimeout(() => {
             chaseZap.style.left = '92%';
             chaseZap.classList.add('zap-ativo');
