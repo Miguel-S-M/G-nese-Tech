@@ -1,7 +1,3 @@
-/* ==========================================================================
-   INTRO OVERLAY — ANIMAÇÃO DE ENTRADA
-   ========================================================================== */
-
 #intro-overlay {
     position: fixed;
     inset: 0;
@@ -149,10 +145,6 @@
     100% { opacity: 0; pointer-events: none; }
 }
 
-/* ==========================================================================
-   CONTROLE DE VISIBILIDADE DO CONTEÚDO
-   ========================================================================== */
-
 .page-content {
     display: none;
     opacity: 0;
@@ -166,11 +158,6 @@ body.conteudo-visivel .page-content {
 body.conteudo-animado .page-content {
     opacity: 1;
 }
-
-/* ==========================================================================
-   CONTEÚDO DA PÁGINA
-   ========================================================================== */
-
 .page-content {
     max-width: 860px;
     margin: 0 auto;
@@ -336,11 +323,7 @@ body.conteudo-animado .page-content {
     box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
     transform: translateY(-4px);
 }
-
-/* ==========================================================================
-   ROBÔ PERSEGUINDO VÍRUS — easter egg do clique na logo
-   ========================================================================== */
-
+/* egg robo */
 #robo-chase-layer {
     position: fixed;
     inset: 0;
@@ -382,7 +365,6 @@ body.conteudo-animado .page-content {
     filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.55));
 }
 
-/* corrida horizontal */
 .robo-chase-virus.correndo {
     animation: virusFugindo var(--chase-dur, 4.5s) linear forwards;
 }
@@ -400,8 +382,6 @@ body.conteudo-animado .page-content {
     0%   { left: -20%; }
     100% { left: 100%; }
 }
-
-/* balanço das pernas/corpo enquanto corre */
 .robo-chase-robot .perna-esq {
     animation: passoPerna 0.28s ease-in-out infinite alternate;
     transform-origin: top center;
@@ -435,7 +415,6 @@ body.conteudo-animado .page-content {
     95%            { opacity: 0.2; }
 }
 
-/* texto que sobe quando o robô alcança o vírus */
 .robo-chase-zap {
     position: absolute;
     top: 0;
