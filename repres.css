@@ -1,6 +1,4 @@
-/* ==========================================================================
-   CONFIGURAÇÕES BASE
-   ========================================================================== */
+
 html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
@@ -20,9 +18,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ==========================================================================
-   MENU SUPERIOR
-   ========================================================================== */
 .menu-superior {
     display: flex;
     justify-content: space-between;
@@ -58,8 +53,6 @@ body {
         0 0 20px #ff0000,
         0 0 40px #ff0000;
 }
-
-/* Botão hamburguer — visível só no mobile */
 .menu-toggle {
     display: none;
     background: none;
@@ -108,10 +101,6 @@ body {
     border-bottom: 1px solid #ff0000;
     padding-bottom: 2px;
 }
-
-/* ==========================================================================
-   RESPONSIVIDADE — MENU HAMBURGUER
-   ========================================================================== */
 @media (max-width: 768px) {
     .menu-superior {
         flex-wrap: nowrap;
@@ -159,10 +148,6 @@ body {
         font-size: 0.9rem;
     }
 }
-
-/* ==========================================================================
-   EFEITO GLITCH
-   ========================================================================== */
 .glitch {
     position: relative;
     display: inline-block;
@@ -209,10 +194,6 @@ body {
     82%  { clip-path: inset(43% 0 43% 0); }
     100% { clip-path: inset(5% 0 88% 0); }
 }
-
-/* ==========================================================================
-   HERO
-   ========================================================================== */
 .hero-representantes {
     padding: 170px 20px 90px;
     text-align: center;
@@ -247,10 +228,6 @@ body {
     font-size: clamp(0.85rem, 2.5vw, 0.95rem);
     padding: 0 8px;
 }
-
-/* ==========================================================================
-   SEÇÃO REPRESENTANTES — GRID DE CARDS
-   ========================================================================== */
 .secao-representantes {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -268,7 +245,6 @@ body {
     }
 }
 
-/* Card base */
 .card-representante {
     background-color: #0d1117;
     border: 1px solid #1e293b;
@@ -334,7 +310,6 @@ body {
     opacity: 0.85;
 }
 
-/* Descrição */
 .card-representante p {
     color: #94a3b8;
     font-size: clamp(0.82rem, 2.2vw, 0.88rem);
@@ -346,7 +321,6 @@ body {
     color: #cbd5e1;
 }
 
-/* Tags de tecnologia */
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -364,10 +338,6 @@ body {
     border-radius: 2px;
     text-transform: uppercase;
 }
-
-/* ==========================================================================
-   SEÇÃO TECNOLOGIAS
-   ========================================================================== */
 .secao-tecnologias {
     padding: 60px clamp(16px, 6vw, 80px);
     max-width: 1200px;
@@ -404,9 +374,6 @@ body {
     color: #ffffff;
 }
 
-/* ==========================================================================
-   SEÇÃO SOBRE O PROJETO
-   ========================================================================== */
 .secao-projeto {
     padding: 60px clamp(16px, 6vw, 80px);
     max-width: 1200px;
@@ -427,10 +394,6 @@ body {
     max-width: 750px;
     font-size: clamp(0.85rem, 2.5vw, 0.95rem);
 }
-
-/* ==========================================================================
-   RODAPÉ
-   ========================================================================== */
 .rodape {
     border-top: 1px solid #1e293b;
     padding: 30px clamp(16px, 6vw, 80px);
@@ -450,7 +413,7 @@ body {
 
 #robot{
     position: absolute;
-    bottom: -15px;   /* aumenta ou diminui até ficar sobre a linha */
+    bottom: -15px;   
     left: -80px;
 
     width: 90px;
@@ -477,9 +440,6 @@ body {
 
 
 
-/* =====================================
-   AJUSTES FINAIS PARA CELULAR
-===================================== */
 
 @media (max-width:768px){
 
