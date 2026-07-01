@@ -1,9 +1,8 @@
-
 html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
 }
-
+ 
 * {
     margin: 0;
     padding: 0;
@@ -11,13 +10,13 @@ html {
     font-family: 'Courier New', Courier, monospace;
     -webkit-tap-highlight-color: transparent;
 }
-
+ 
 body {
     background-color: #080a0f;
     color: #e2e8f0;
     overflow-x: hidden;
 }
-
+ 
 .menu-superior {
     display: flex;
     justify-content: space-between;
@@ -34,7 +33,7 @@ body {
     flex-wrap: wrap;
     gap: 10px 20px;
 }
-
+ 
 .logo-reduzida {
     font-size: clamp(1.6rem, 5vw, 2.7rem);
     font-weight: bold;
@@ -44,7 +43,7 @@ body {
     flex-shrink: 0;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
-
+ 
 .logo-reduzida:hover {
     color: #ffffff;
     text-shadow:
@@ -65,17 +64,17 @@ body {
     transition: color 0.3s, border-color 0.3s;
     line-height: 1;
 }
-
+ 
 .menu-toggle:hover {
     color: #ff0000;
     border-color: #ff0000;
 }
-
+ 
 /* Nav wrapper */
 #navMenu {
     display: flex;
 }
-
+ 
 .nav-lista {
     display: flex;
     list-style: none;
@@ -83,7 +82,7 @@ body {
     justify-content: flex-end;
     gap: clamp(10px, 3vw, 30px);
 }
-
+ 
 .nav-link {
     color: #94a3b8;
     text-decoration: none;
@@ -91,11 +90,11 @@ body {
     white-space: nowrap;
     transition: color 0.3s;
 }
-
+ 
 .nav-link:hover {
     color: #ff0000;
 }
-
+ 
 .nav-link--ativo {
     color: #ff0000;
     border-bottom: 1px solid #ff0000;
@@ -107,12 +106,12 @@ body {
         align-items: center;
         gap: 0;
     }
-
+ 
     .menu-toggle {
         display: block;
         margin-left: auto;
     }
-
+ 
     #navMenu {
         display: none;
         position: absolute;
@@ -123,25 +122,25 @@ body {
         border-bottom: 1px solid #1e293b;
         padding: 16px 20px 20px;
     }
-
+ 
     #navMenu.nav-aberto {
         display: flex;
     }
-
+ 
     .nav-lista {
         flex-direction: column;
         width: 100%;
         gap: 0;
     }
-
+ 
     .nav-lista li {
         border-bottom: 1px solid #1e293b;
     }
-
+ 
     .nav-lista li:last-child {
         border-bottom: none;
     }
-
+ 
     .nav-link {
         display: block;
         padding: 12px 4px;
@@ -152,7 +151,7 @@ body {
     position: relative;
     display: inline-block;
 }
-
+ 
 .glitch::before,
 .glitch::after {
     content: attr(data-text);
@@ -164,19 +163,19 @@ body {
     background: #080a0f;
     clip: rect(0, 0, 0, 0);
 }
-
+ 
 .glitch:hover::before {
     left: -2px;
     text-shadow: 2px 0 #ff0055;
     animation: glitch-anim-1 0.46s infinite linear alternate-reverse;
 }
-
+ 
 .glitch:hover::after {
     left: 2px;
     text-shadow: -2px 0 #00f2fe;
     animation: glitch-anim-2 0.33s infinite linear alternate-reverse;
 }
-
+ 
 @keyframes glitch-anim-1 {
     0%   { clip-path: inset(40% 0 61% 0); }
     20%  { clip-path: inset(92% 0 1% 0); }
@@ -185,7 +184,7 @@ body {
     80%  { clip-path: inset(15% 0 80% 0); }
     100% { clip-path: inset(80% 0 5% 0); }
 }
-
+ 
 @keyframes glitch-anim-2 {
     0%   { clip-path: inset(25% 0 58% 0); }
     22%  { clip-path: inset(84% 0 3% 0); }
@@ -198,13 +197,13 @@ body {
     padding: 170px 20px 90px;
     text-align: center;
 }
-
+ 
 @media (max-width: 768px) {
     .hero-representantes {
         padding: 130px 16px 60px;
     }
 }
-
+ 
 .hero-tag {
     color: #ff0000;
     font-size: 0.85rem;
@@ -212,14 +211,14 @@ body {
     margin-bottom: 16px;
     opacity: 0.8;
 }
-
+ 
 .hero-representantes h1 {
     color: #ffffff;
     font-size: clamp(1.8rem, 6vw, 4rem);
     letter-spacing: clamp(2px, 2vw, 6px);
     margin-bottom: 20px;
 }
-
+ 
 .hero-representantes p {
     color: #94a3b8;
     max-width: 700px;
@@ -228,6 +227,7 @@ body {
     font-size: clamp(0.85rem, 2.5vw, 0.95rem);
     padding: 0 8px;
 }
+/* Ponto extra: CSS Grid organiza os cards dos representantes em colunas fluidas */
 .secao-representantes {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -236,7 +236,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-
+ 
 @media (max-width: 480px) {
     .secao-representantes {
         grid-template-columns: 1fr;
@@ -244,7 +244,7 @@ body {
         gap: 18px;
     }
 }
-
+ 
 .card-representante {
     background-color: #0d1117;
     border: 1px solid #1e293b;
@@ -256,19 +256,19 @@ body {
     gap: 16px;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
+ 
 @media (max-width: 480px) {
     .card-representante {
         padding: 20px 16px;
     }
 }
-
+ 
 .card-representante:hover {
     transform: translateY(-5px);
     border-color: #ff0000;
     box-shadow: 0 8px 30px rgba(255, 0, 0, 0.12);
 }
-
+ 
 /* Cabeçalho do card */
 .card-header {
     display: flex;
@@ -276,7 +276,7 @@ body {
     gap: 16px;
     flex-wrap: wrap;
 }
-
+ 
 .avatar-placeholder {
     width: 52px;
     height: 52px;
@@ -292,14 +292,14 @@ body {
     color: #ff0000;
     letter-spacing: 1px;
 }
-
+ 
 .card-titulo h2 {
     color: #ffffff;
     font-size: clamp(0.95rem, 3vw, 1.05rem);
     font-weight: bold;
     letter-spacing: 1px;
 }
-
+ 
 .card-titulo h3 {
     color: #ff0000;
     font-size: clamp(0.65rem, 2vw, 0.75rem);
@@ -309,25 +309,25 @@ body {
     margin-top: 3px;
     opacity: 0.85;
 }
-
+ 
 .card-representante p {
     color: #94a3b8;
     font-size: clamp(0.82rem, 2.2vw, 0.88rem);
     line-height: 1.75;
     flex-grow: 1;
 }
-
+ 
 .card-representante p strong {
     color: #cbd5e1;
 }
-
+ 
 .tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-top: 4px;
 }
-
+ 
 .tag {
     background-color: rgba(255, 0, 0, 0.08);
     border: 1px solid rgba(255, 0, 0, 0.3);
@@ -344,20 +344,20 @@ body {
     margin: 0 auto;
     border-top: 1px solid #1e293b;
 }
-
+ 
 .secao-tecnologias h2 {
     color: #ffffff;
     font-size: clamp(1rem, 3.5vw, 1.3rem);
     letter-spacing: 4px;
     margin-bottom: 32px;
 }
-
+ 
 .tecnologias {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
 }
-
+ 
 .tech-item {
     background-color: #0d1117;
     border: 1px solid #1e293b;
@@ -368,26 +368,26 @@ body {
     border-radius: 2px;
     transition: border-color 0.3s, color 0.3s;
 }
-
+ 
 .tech-item:hover {
     border-color: #ff0000;
     color: #ffffff;
 }
-
+ 
 .secao-projeto {
     padding: 60px clamp(16px, 6vw, 80px);
     max-width: 1200px;
     margin: 0 auto;
     border-top: 1px solid #1e293b;
 }
-
+ 
 .secao-projeto h2 {
     color: #ffffff;
     font-size: clamp(1rem, 3.5vw, 1.3rem);
     letter-spacing: 4px;
     margin-bottom: 24px;
 }
-
+ 
 .secao-projeto p {
     color: #94a3b8;
     line-height: 1.9;
@@ -401,118 +401,121 @@ body {
     position: relative;
     overflow: hidden;
 }
-
+ 
 .rodape p {
     color: #334155;
     font-size: clamp(0.68rem, 2vw, 0.78rem);
     letter-spacing: 2px;
 }
-
-
-
-
+ 
+ 
+ 
+ 
+/* Ponto extra: posicionamento não estático (absolute) + animação (@keyframes andar)
+   fazem o robozinho "caminhar" pelo rodapé, da esquerda para a direita, em loop */
 #robot{
     position: absolute;
     bottom: -15px;   
     left: -80px;
-
+ 
     width: 90px;
     height: 90px;
-
+ 
     background: url("img/robo.png") no-repeat center;
     background-size: contain;
-
+ 
     animation: andar 45s linear infinite;
 }
-
+ 
 @keyframes andar{
     from{
         left: -80px;
         transform: scaleX(1);
     }
-
+ 
     to{
         left: calc(100% + 80px);
         transform: scaleX(1);
     }
 }
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
 @media (max-width:768px){
-
+ 
     .hero-representantes{
         padding:120px 15px 60px;
     }
-
+ 
     .hero-tag{
         letter-spacing:2px;
         font-size:.75rem;
     }
-
+ 
     .card-header{
         flex-direction:column;
         text-align:center;
     }
-
+ 
     .card-titulo{
         text-align:center;
     }
-
+ 
     .card-representante p{
         text-align:center;
     }
-
+ 
     .tags{
         justify-content:center;
     }
-
+ 
     .tecnologias{
         justify-content:center;
     }
-
+ 
     .secao-tecnologias h2,
     .secao-projeto h2{
         text-align:center;
         letter-spacing:2px;
     }
-
+ 
     .secao-projeto p{
         text-align:center;
     }
-
+ 
     .rodape p{
         line-height:1.7;
     }
 }
-
+ 
 @media (max-width:480px){
-
+ 
     .hero-representantes h1{
         font-size:1.8rem;
     }
-
+ 
     .hero-representantes p{
         font-size:.9rem;
     }
-
+ 
     .avatar-placeholder{
         width:60px;
         height:60px;
     }
-
+ 
     .tech-item{
         width:100%;
         text-align:center;
     }
-
+ 
     #robot{
         width:60px;
         height:60px;
         bottom:-10px;
         animation: andar 60s linear infinite;
     }
-
+ 
 }
+ 
