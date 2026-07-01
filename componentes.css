@@ -216,3 +216,31 @@ img:hover {
         width: 100%;
     }
 }
+
+
+/* Tabela de Componentes */
+.tabela-componentes{
+    width:100%;
+    border-collapse:collapse;
+    margin:40px 0;
+    background:#0f131a;
+    color:#e2e8f0;
+    border:1px solid #1e293b;
+}
+.tabela-componentes th{
+    background:#8b0000;
+    color:#fff;
+    padding:15px;
+    border:1px solid #1e293b;
+}
+.tabela-componentes td{
+    padding:14px;
+    border:1px solid #1e293b;
+    text-align:center;
+}
+.tabela-componentes tr:nth-child(even){
+    background:#111827;
+}
+.tabela-componentes tr:hover{
+    background:#1b2638;
+}
