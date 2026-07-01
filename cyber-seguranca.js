@@ -5,16 +5,16 @@
     const tLines    = document.getElementById('t-lines');
     const heading   = document.getElementById('intro-heading');
     const glitchBar = document.getElementById('intro-glitch-bar');
-
+ 
     canvas.width  = window.innerWidth;
     canvas.height = window.innerHeight;
-
-    /* ---- Matrix rain ---- */
+ 
+    /* ---- Matrix rain (ponto extra: efeito de "chuva de código" em canvas) ---- */
     const cols  = Math.floor(canvas.width / 16);
     const drops = Array(cols).fill(1);
     const chars = 'アイウエオカキクケコABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*(){}[]<>/|:;';
     let matrixAlpha = 1;
-
+ 
     function drawMatrix() {
         ctx.fillStyle = `rgba(0,0,0,${0.06 + (1 - matrixAlpha) * 0.2})`;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -31,7 +31,7 @@
         }
     }
     const matrixTimer = setInterval(drawMatrix, 40);
-
+ 
     /* ---- Terminal lines ---- */
     const lines = [
         { text: '> INICIANDO MÓDULO: CYBER SEGURANÇA', delay: 200 },
@@ -51,7 +51,7 @@
         { text: '> Carregando conteúdo classificado...', delay: 6300 },
         { text: '  [██████████] 100% — ACESSO AUTORIZADO', delay: 6800, cls: 'cyan' },
     ];
-
+ 
     lines.forEach(({ text, delay, cls }) => {
         setTimeout(() => {
             const d = document.createElement('div');
@@ -60,7 +60,7 @@
             tLines.appendChild(d);
         }, delay);
     });
-
+ 
     /* ---- Glitch bars ---- */
     function fireGlitch() {
         const top = Math.random() * canvas.height * 0.8;
@@ -81,10 +81,10 @@
         ctx.restore();
         setTimeout(() => { glitchBar.style.opacity = '0'; }, 80 + Math.random() * 100);
     }
-
+ 
     /* ---- Reveal title ---- */
     let glitchInterval;
-
+ 
     function startGlitchPhase() {
         let count = 0;
         glitchInterval = setInterval(() => {
@@ -97,16 +97,16 @@
             }
         }, 160);
     }
-
+ 
     function showTitle() {
         matrixAlpha = 0.12;
         ctx.fillStyle = 'rgba(0,0,0,0.55)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-
+ 
         heading.style.opacity    = '1';
         heading.style.transition = 'clip-path 2s steps(28, end)';
         heading.style.clipPath   = 'inset(0 0% 0 0)';
-
+ 
         let gc = 0;
         const gi = setInterval(() => {
             heading.classList.add('glitch');
@@ -114,74 +114,76 @@
             gc++;
             if (gc >= 7) clearInterval(gi);
         }, 380);
-
+ 
         setTimeout(dismissIntro, 3800);
     }
-
+ 
     setTimeout(startGlitchPhase, 7500);
-
+ 
     /* ---- Dismiss ---- */
     function dismissIntro() {
         clearInterval(matrixTimer);
         clearInterval(glitchInterval);
         overlay.classList.add('fade-out');
-
+ 
         document.body.classList.add('conteudo-visivel');
         setTimeout(() => {
             overlay.remove();
             document.body.classList.add('conteudo-animado');
         }, 800);
     }
-
+ 
     overlay.addEventListener('click', dismissIntro);
-
+ 
     window.addEventListener('resize', () => {
         canvas.width  = window.innerWidth;
         canvas.height = window.innerHeight;
     });
-
-
-
+ 
+ 
+ 
+    /* ---- Perseguição robô x vírus (ponto extra: mini-animação/easter egg ao clicar na logo) ---- */
     const logo       = document.querySelector('.logo-reduzida');
     const chaseLayer = document.getElementById('robo-chase-layer');
     const chaseTrack = document.querySelector('.robo-chase-track');
     const chaseVirus  = document.querySelector('.robo-chase-virus');
     const chaseRobot  = document.querySelector('.robo-chase-robot');
     const chaseZap    = document.querySelector('.robo-chase-zap');
-
+ 
     let chaseEmAndamento = false;
-
+ 
     function dispararPerseguicao() {
         if (chaseEmAndamento) return;
         chaseEmAndamento = true;
-
+ 
         const topoAleatorio = 25 + Math.random() * 50; 
         chaseTrack.style.setProperty('--chase-top', `${topoAleatorio}%`);
         chaseTrack.style.setProperty('--chase-dur', '4.2s');
-
+ 
         chaseLayer.classList.add('ativo');
-
+ 
         [chaseVirus, chaseRobot].forEach(el => {
             el.classList.remove('correndo');
         });
         chaseZap.classList.remove('zap-ativo');
         void chaseVirus.offsetWidth;
         void chaseRobot.offsetWidth;
-
+ 
         chaseVirus.classList.add('correndo');
         chaseRobot.classList.add('correndo');
         setTimeout(() => {
             chaseZap.style.left = '92%';
             chaseZap.classList.add('zap-ativo');
         }, 3500);
-
+ 
         setTimeout(() => {
             chaseLayer.classList.remove('ativo');
             chaseEmAndamento = false;
         }, 4400);
     }
-
+ 
     if (logo) {
         logo.addEventListener('click', dispararPerseguicao);
     }
 })();
+ 
