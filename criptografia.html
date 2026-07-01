@@ -28,39 +28,39 @@
     </style>
 </head>
 <body>
-
+ 
     <header class="menu-superior">
         <a href="hub.html" class="logo-reduzida" data-text="G_T">G_T</a>
         <a href="cyber-seguranca.html" class="voltar-link">← Voltar para Cyber Segurança</a>
     </header>
-
-
+ 
+ 
     <section class="secao-hero">
         <div class="hero-bg-binary" id="hero-binary"></div>
-
+ 
         <div class="hero-conteudo">
             <p class="hero-eyebrow">&gt; módulo 01 — dados protegidos</p>
-
+ 
             <div style="display:flex; justify-content:center; margin-bottom:30px;">
                 <svg width="90" height="100" viewBox="0 0 90 100"
                      xmlns="http://www.w3.org/2000/svg" aria-label="Cadeado digital" style="cursor: pointer;">
-
+ 
                     <text x="0"  y="14" font-family="Courier New" font-size="7"
                           fill="#00ff41" opacity="0.18" letter-spacing="2">01 10 11</text>
                     <text x="2"  y="96" font-family="Courier New" font-size="7"
                           fill="#00ff41" opacity="0.18" letter-spacing="2">10 01 00</text>
                     <text x="58" y="55" font-family="Courier New" font-size="7"
                           fill="#00f0ff" opacity="0.12" letter-spacing="1">1010</text>
-
+ 
                     <path d="M27,46 L27,28 Q27,10 45,10 Q63,10 63,28 L63,46"
                           fill="none" stroke="#ff0000" stroke-width="5"
                           stroke-linecap="round"
                           style="filter:drop-shadow(0 0 5px #ff0000)"/>
-
+ 
                     <rect x="14" y="44" width="62" height="44" rx="4" ry="4"
                           fill="#0c1018" stroke="#ff0000" stroke-width="1.5"
                           style="filter:drop-shadow(0 0 6px rgba(255,0,0,0.35))"/>
-
+ 
                     <line x1="14" y1="56" x2="76" y2="56"
                           stroke="#1e293b" stroke-width="1"/>
                     <line x1="14" y1="76" x2="76" y2="76"
@@ -69,14 +69,14 @@
                           stroke="#1e293b" stroke-width="1"/>
                     <line x1="58" y1="44" x2="58" y2="88"
                           stroke="#1e293b" stroke-width="1"/>
-
+ 
                     <circle cx="45" cy="63" r="7"
                             fill="#080a0f" stroke="#ff0000" stroke-width="1.5"
                             style="filter:drop-shadow(0 0 4px #ff0000)"/>
                     <line x1="45" y1="70" x2="45" y2="80"
                           stroke="#ff0000" stroke-width="2.5" stroke-linecap="round"
                           style="filter:drop-shadow(0 0 3px #ff0000)"/>
-
+ 
                     <circle cx="14" cy="56" r="2.5" fill="#ff0000" opacity="0.6"/>
                     <circle cx="76" cy="56" r="2.5" fill="#ff0000" opacity="0.6"/>
                     <circle cx="14" cy="76" r="2.5" fill="#00f0ff" opacity="0.5"/>
@@ -87,10 +87,10 @@
             <p class="hero-subtitulo">Proteção de Dados &amp; Comunicação Segura</p>
         </div>
     </section>
-
-
+ 
+ 
     <main class="page-content">
-
+ 
         <section class="secao-didatica">
             <h2>// O que é Criptografia</h2>
             <p>
@@ -118,18 +118,19 @@
                 inquebrável.
             </p>
         </section>
-
+ 
         <div class="linha-decorativa"></div>
-
+ 
         <section class="secao-didatica">
             <h2>// Simétrica vs Assimétrica</h2>
             <p>
                 Existem dois paradigmas principais que diferem fundamentalmente na forma como as
                 chaves são geridas e distribuídas entre as partes comunicantes.
             </p>
-
+ 
+            <!-- Ponto extra: CSS Grid compara os tipos de criptografia (grid-comparacao em criptografia.css) -->
             <div class="grid-comparacao">
-
+ 
                 <div class="card-cripto simetrica">
                     <span class="card-tag">Tipo 01</span>
                     <h3>Criptografia Simétrica</h3>
@@ -145,7 +146,7 @@
                         <li>Uso: criptografia de disco, VPNs, bases de dados</li>
                     </ul>
                 </div>
-
+ 
                 <div class="card-cripto assimetrica">
                     <span class="card-tag">Tipo 02</span>
                     <h3>Criptografia Assimétrica</h3>
@@ -161,9 +162,9 @@
                         <li>Uso: TLS/HTTPS, SSH, assinaturas digitais, PGP</li>
                     </ul>
                 </div>
-
+ 
             </div>
-
+ 
             <p>
                 Na prática, os sistemas modernos utilizam <strong style="color:#e2e8f0">criptografia híbrida</strong>:
                 a assimétrica para trocar com segurança uma chave de sessão, e a simétrica para
@@ -171,9 +172,9 @@
                 velocidade da outra.
             </p>
         </section>
-
+ 
         <div class="linha-decorativa"></div>
-
+ 
         <section class="secao-didatica">
             <h2>// Como o HTTPS Protege Dados em Trânsito</h2>
             <p>
@@ -183,9 +184,9 @@
                 <span class="badge-protocolo">TLS</span> (Transport Layer Security), que envolve
                 a comunicação num canal criptografado e autenticado.
             </p>
-
+ 
             <div class="diagrama-https">
-
+ 
                 <div class="linha-diagrama">
                     <span class="node">BROWSER</span>
                     <span class="seta">──────────────►</span>
@@ -194,7 +195,7 @@
                 <div class="linha-diagrama" style="padding-left:10px; color:#64748b; font-size:0.78rem;">
                     ClientHello: versão TLS, cifras suportadas, nonce aleatório
                 </div>
-
+ 
                 <div class="linha-diagrama" style="margin-top:14px;">
                     <span class="node">BROWSER</span>
                     <span class="seta" style="color:#00f0ff;">◄──────────────</span>
@@ -203,7 +204,7 @@
                 <div class="linha-diagrama" style="padding-left:10px; color:#64748b; font-size:0.78rem;">
                     ServerHello + Certificado X.509 (contém chave pública)
                 </div>
-
+ 
                 <div class="linha-diagrama" style="margin-top:14px;">
                     <span class="node">BROWSER</span>
                     <span class="seta">──────────────►</span>
@@ -212,7 +213,7 @@
                 <div class="linha-diagrama" style="padding-left:10px; color:#64748b; font-size:0.78rem;">
                     Segredo pré-mestre cifrado com a chave pública do servidor
                 </div>
-
+ 
                 <div class="linha-diagrama" style="margin-top:14px; color:#00ff41;">
                     <span class="node" style="border-color:rgba(0,255,65,0.4); color:#00ff41;">BROWSER</span>
                     <span class="seta" style="color:#00ff41;">◄══════════════►</span>
@@ -221,9 +222,9 @@
                 <div class="linha-diagrama" style="padding-left:10px; font-size:0.78rem;">
                     <span class="label-seta">✓ Canal AES-256 estabelecido — todos os dados cifrados daqui em diante</span>
                 </div>
-
+ 
             </div>
-
+ 
             <p>
                 O certificado TLS é emitido e assinado por uma
                 <strong style="color:#e2e8f0">Autoridade Certificadora (CA)</strong> de confiança,
@@ -238,26 +239,28 @@
                 comprometida, as sessões passadas permanecem protegidas.
             </p>
         </section>
-
+ 
     </main>
-
-
+ 
+ 
     <footer class="rodape-sistema">
         <p class="texto-rodape">
             © 2026 GÊNESE TECH // MÓDULO CRIPTOGRAFIA //
             TLS 1.3 ATIVO // ALL RIGHTS RESERVED.
         </p>
     </footer>
-
-
+ 
+ 
+    <!-- Ponto extra: JavaScript — fundo binário animado + dois Easter Eggs
+         (mensagem cifrada no console e cadeado clicável revelando uma flag) -->
     <script>
     (function gerarFundoBinario() {
         const el = document.getElementById('hero-binary');
         if (!el) return;
-
+ 
         const colunas = 80;
         const linhas  = 30;
-
+ 
         let conteudo = '';
         for (let l = 0; l < linhas; l++) {
             for (let c = 0; c < colunas; c++) {
@@ -268,8 +271,8 @@
         }
         el.textContent = conteudo;
     })();
-
-    // 2. EASTER EGG DO CONSOLE HACKER (F12) 
+ 
+    // Ponto extra: Easter Egg #1 — desafio de decodificação Base64 impresso no console (F12)
     console.log(
         "%c\n" +
         "   _____ ______ _   _ ______  _____ ______   _______ ______ _____ _    _ \n" +
@@ -284,8 +287,8 @@
         " Dica: Use o comando atob('STRING_AQUI') aqui no console para descriptografar.\n", 
         "color: #ff0000; font-family: monospace; font-weight: bold;"
     );
-
-    // 3. EVENTO DE CLIQUE DO CADEADO 
+ 
+    // Ponto extra: Easter Egg #2 — clicar no cadeado SVG revela a flag secreta
     const cadeado = document.querySelector('svg');
     if (cadeado) {
         cadeado.addEventListener('click', () => {
@@ -299,5 +302,6 @@
     </script>
 </body>
 </html>
-
+ 
 ```
+ 
