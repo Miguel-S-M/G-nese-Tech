@@ -1,6 +1,4 @@
-*============================================= =============================
-   CONFIGURAÇÕES BASE
-   ========================================================================== */
+/*CONFIGURAÇÕES BASE*/
    html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
@@ -22,9 +20,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ==========================================================================
-   MENU SUPERIOR
-   ========================================================================== */
+/*MENU SUPERIOR*/
 .menu-superior {
     display: flex;
     justify-content: space-between;
@@ -94,9 +90,7 @@ body {
     }
 }
 
-/* ==========================================================================
-   EFEITO GLITCH / INTERFERÊNCIA CIBERNÉTICA
-   ========================================================================== */
+/*EFEITO GLITCH / INTERFERÊNCIA CIBERNÉTICA */
 .glitch {
     position: relative;
     display: inline-block;
@@ -144,9 +138,7 @@ body {
     100% { clip-path: inset(5% 0 88% 0); }
 }
 
-/* ==========================================================================
-   SEÇÃO HERO (INTRODUÇÃO)
-   ========================================================================== */
+/* INTRODUÇÃO */
 .secao-hero {
     min-height: 65vh;
     display: flex;
@@ -184,9 +176,7 @@ body {
     padding: 0 10px;
 }
 
-/* ==========================================================================
-   HUB DE CARTÕES (PROPORÇÃO VERTICAL A4)
-   ========================================================================== */
+/*HUB DE CARTÕES*/
 .secao-hub {
     max-width: 1300px;
     margin: 0 auto;
@@ -346,9 +336,7 @@ body {
     line-height: 1.6;
 }
 
-/* ==========================================================================
-   EFEITO DE HACK NO MARCADOR SUPERIOR (// 01)
-   ========================================================================== */
+/*EFEITO DE HACK NO MARCADOR SUPERIOR  */
 @keyframes marcador-hack {
     0% {
         transform: translate(0, 0);
@@ -383,9 +371,7 @@ body {
     scroll-margin-top: 90px;
 }
 
-/* ==========================================================================
-   DEPOIMENTOS
-   ========================================================================== */
+/*DEPOIMENTOS*/
 .secao-depoimentos {
     max-width: 800px;
     margin: 60px auto;
@@ -483,9 +469,7 @@ input[name="depoimento-controle"] {
 background-image: url('glitch.gif');
 background-size: cover;
 }
-/* ==========================================================================
-   SEÇÃO FALE CONOSCO (CANAL DE COMUNICAÇÃO)
-   ========================================================================== */
+/*SEÇÃO FALE CONOSCO (CANAL DE COMUNICAÇÃO)*/
 .secao-contato {
     max-width: 1100px;
     margin: 80px auto 40px auto;
@@ -605,9 +589,7 @@ background-size: cover;
     }
 }
 
-/* ==========================================================================
-   RODAPÉ DO SISTEMA
-   ========================================================================== */
+/*RODAPÉ DO SISTEMA*/
 .rodape-sistema {
     width: 100%;
     text-align: center;
