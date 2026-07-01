@@ -262,9 +262,7 @@ section article img[alt*="Alan"] {
     text-align: center;
 }
 
-/* ==========================================================================
-   RODAPÉ DO SISTEMA
-   ========================================================================== */
+/*rodapé*/
 .rodape-sistema {
     width: 100%;
     text-align: center;
