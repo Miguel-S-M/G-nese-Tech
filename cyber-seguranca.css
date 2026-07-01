@@ -1,3 +1,4 @@
+/* Ponto extra: overlay fixo em tela cheia — introdução animada da página */
 #intro-overlay {
     position: fixed;
     inset: 0;
@@ -9,12 +10,12 @@
     overflow: hidden;
     cursor: pointer;
 }
-
+ 
 #intro-canvas {
     position: absolute;
     inset: 0;
 }
-
+ 
 #intro-scanline {
     position: absolute;
     inset: 0;
@@ -28,7 +29,7 @@
     pointer-events: none;
     z-index: 2;
 }
-
+ 
 #intro-terminal {
     position: absolute;
     inset: 0;
@@ -41,14 +42,14 @@
     z-index: 3;
     pointer-events: none;
 }
-
+ 
 .t-line        { opacity: 0; white-space: nowrap; }
 .t-line.show   { opacity: 1; }
 .t-red         { color: #ff003c; }
 .t-cyan        { color: #00f0ff; }
 .t-yellow      { color: #ffe000; }
 .t-dim         { color: #006618; }
-
+ 
 #intro-title {
     position: absolute;
     inset: 0;
@@ -58,7 +59,7 @@
     z-index: 5;
     pointer-events: none;
 }
-
+ 
 #intro-title h2 {
     font-family: 'Courier New', monospace;
     font-weight: 900;
@@ -76,7 +77,7 @@
     position: relative;
     margin: 0;
 }
-
+ 
 #intro-title h2::before,
 #intro-title h2::after {
     content: attr(data-text);
@@ -84,22 +85,22 @@
     inset: 0;
     opacity: 0;
 }
-
+ 
 #intro-title h2::before { color: #00f0ff; }
 #intro-title h2::after  { color: #ff003c; }
-
+ 
 #intro-title h2.glitch::before {
     opacity: 1;
     transform: translateX(-5px);
     clip-path: inset(20% 0 55% 0);
 }
-
+ 
 #intro-title h2.glitch::after {
     opacity: 1;
     transform: translateX(5px);
     clip-path: inset(65% 0 10% 0);
 }
-
+ 
 #intro-skip {
     position: absolute;
     bottom: 28px;
@@ -112,11 +113,11 @@
     pointer-events: none;
     transition: color 0.3s;
 }
-
+ 
 #intro-overlay:hover #intro-skip {
     color: #64748b;
 }
-
+ 
 #intro-vignette {
     position: absolute;
     inset: 0;
@@ -124,7 +125,7 @@
     z-index: 4;
     pointer-events: none;
 }
-
+ 
 #intro-glitch-bar {
     position: absolute;
     left: 0;
@@ -135,26 +136,26 @@
     pointer-events: none;
     opacity: 0;
 }
-
+ 
 #intro-overlay.fade-out {
     animation: overlayFadeOut 0.8s ease forwards;
 }
-
+ 
 @keyframes overlayFadeOut {
     0%   { opacity: 1; }
     100% { opacity: 0; pointer-events: none; }
 }
-
+ 
 .page-content {
     display: none;
     opacity: 0;
     transition: opacity 0.8s ease;
 }
-
+ 
 body.conteudo-visivel .page-content {
     display: block;
 }
-
+ 
 body.conteudo-animado .page-content {
     opacity: 1;
 }
@@ -163,7 +164,7 @@ body.conteudo-animado .page-content {
     margin: 0 auto;
     padding: 110px 40px 60px 40px;
 }
-
+ 
 .page-content h1 {
     color: #ffffff;
     text-align: center;
@@ -172,7 +173,7 @@ body.conteudo-animado .page-content {
     text-transform: uppercase;
     letter-spacing: 4px;
 }
-
+ 
 .page-content h1::after {
     content: "";
     display: block;
@@ -181,7 +182,7 @@ body.conteudo-animado .page-content {
     margin-top: 20px;
     background: linear-gradient(90deg, transparent, #ff0000, transparent);
 }
-
+ 
 .page-content h2 {
     color: #ff0000;
     margin-top: 50px;
@@ -191,35 +192,35 @@ body.conteudo-animado .page-content {
     font-size: 1.2rem;
     letter-spacing: 1px;
 }
-
+ 
 .page-content p {
     color: #9dabbe;
     margin-bottom: 20px;
     line-height: 1.75;
 }
-
+ 
 .page-content ol {
     margin-left: 30px;
     margin-bottom: 25px;
 }
-
+ 
 .page-content li {
     color: #9dabbe;
     margin-bottom: 10px;
     line-height: 1.7;
 }
-
+ 
 .page-content a {
     color: #ff0000;
     text-decoration: none;
     transition: color 0.3s, text-shadow 0.3s;
 }
-
+ 
 .page-content a:hover {
     color: #ffffff;
     text-shadow: 0 0 8px #ff0000;
 }
-
+ 
 .voltar-link {
     display: inline-block;
     margin-top: 30px;
@@ -229,13 +230,13 @@ body.conteudo-animado .page-content {
     font-size: 0.85rem;
     transition: background 0.3s, color 0.3s;
 }
-
+ 
 .voltar-link:hover {
     background: #ff0000;
     color: #080a0f !important;
     text-shadow: none !important;
 }
-
+ 
 .container-botoes-navegacao {
     display: flex;
     justify-content: center;
@@ -243,7 +244,7 @@ body.conteudo-animado .page-content {
     margin: 50px 0;
     padding: 20px;
 }
-
+ 
 .btn-navegacao {
     display: inline-flex;
     align-items: center;
@@ -261,13 +262,13 @@ body.conteudo-animado .page-content {
     position: relative;
     overflow: hidden;
 }
-
+ 
 .btn-criptografia {
     background-color: rgba(0, 122, 204, 0.08);
     color: #58a6ff;
     border: 2px solid rgba(0, 122, 204, 0.4);
 }
-
+ 
 .btn-criptografia:hover {
     background-color: #007acc;
     color: #ffffff;
@@ -275,13 +276,13 @@ body.conteudo-animado .page-content {
     box-shadow: 0 0 20px rgba(0, 122, 204, 0.6);
     transform: translateY(-4px);
 }
-
+ 
 .btn-firewall {
     background-color: rgba(224, 90, 71, 0.08);
     color: #ff7b72;
     border: 2px solid rgba(224, 90, 71, 0.4);
 }
-
+ 
 .btn-firewall:hover {
     background-color: #e05a47;
     color: #ffffff;
@@ -289,12 +290,12 @@ body.conteudo-animado .page-content {
     box-shadow: 0 0 20px rgba(224, 90, 71, 0.6);
     transform: translateY(-4px);
 }
-
+ 
 .btn-navegacao:active {
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-
+ 
 @media (max-width: 600px) {
     .container-botoes-navegacao {
         flex-direction: column;
@@ -315,7 +316,7 @@ body.conteudo-animado .page-content {
     color: #ff6b6b;
     border: 2px solid rgba(255, 0, 0, 0.4);
 }
-
+ 
 .btn-malware:hover {
     background-color: #cc0000;
     color: #ffffff;
@@ -334,11 +335,11 @@ body.conteudo-animado .page-content {
     overflow: hidden;
     display: none;
 }
-
+ 
 #robo-chase-layer.ativo {
     display: block;
 }
-
+ 
 .robo-chase-track {
     position: absolute;
     top: var(--chase-top, 70%);
@@ -346,7 +347,7 @@ body.conteudo-animado .page-content {
     width: 100%;
     height: 0;
 }
-
+ 
 .robo-chase-virus,
 .robo-chase-robot {
     position: absolute;
@@ -354,30 +355,30 @@ body.conteudo-animado .page-content {
     transform: translate(-50%, -50%);
     will-change: left, transform;
 }
-
+ 
 .robo-chase-virus svg,
 .robo-chase-robot svg {
     display: block;
     filter: drop-shadow(0 0 10px rgba(255, 0, 60, 0.5));
 }
-
+ 
 .robo-chase-robot svg {
     filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.55));
 }
-
+ 
 .robo-chase-virus.correndo {
     animation: virusFugindo var(--chase-dur, 4.5s) linear forwards;
 }
-
+ 
 .robo-chase-robot.correndo {
     animation: roboPerseguindo var(--chase-dur, 4.5s) linear forwards;
 }
-
+ 
 @keyframes virusFugindo {
     0%   { left: -8%; }
     100% { left: 108%; }
 }
-
+ 
 @keyframes roboPerseguindo {
     0%   { left: -20%; }
     100% { left: 100%; }
@@ -390,31 +391,31 @@ body.conteudo-animado .page-content {
     animation: passoPerna 0.28s ease-in-out infinite alternate-reverse;
     transform-origin: top center;
 }
-
+ 
 @keyframes passoPerna {
     0%   { transform: rotate(-22deg); }
     100% { transform: rotate(22deg); }
 }
-
+ 
 .robo-chase-virus .espinho {
     animation: espinhoTremor 0.35s ease-in-out infinite alternate;
     transform-origin: center;
 }
-
+ 
 @keyframes espinhoTremor {
     0%   { transform: scale(1); }
     100% { transform: scale(1.12); }
 }
-
+ 
 .robo-chase-robot .robo-olho {
     animation: olhoPisca 1.6s steps(1) infinite;
 }
-
+ 
 @keyframes olhoPisca {
     0%, 90%, 100% { opacity: 1; }
     95%            { opacity: 0.2; }
 }
-
+ 
 .robo-chase-zap {
     position: absolute;
     top: 0;
@@ -428,22 +429,22 @@ body.conteudo-animado .page-content {
     opacity: 0;
     pointer-events: none;
 }
-
+ 
 .robo-chase-zap.zap-ativo {
     animation: zapSobe 1.1s ease-out forwards;
 }
-
+ 
 @keyframes zapSobe {
     0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
     15%  { opacity: 1; transform: translate(-50%, -60%) scale(1.15); }
     100% { opacity: 0; transform: translate(-50%, -160%) scale(1); }
 }
-
+ 
 .logo-reduzida {
     cursor: pointer;
 }
-
-
+ 
+ 
         .painel-scanner {
             position: relative;
             width: 100%;
@@ -464,7 +465,7 @@ body.conteudo-animado .page-content {
             border-bottom: 1px solid #1e293b;
             background-color: #080a0f;
         }
-
+ 
         .scanner-titulo {
             color: #ff0000;
             font-size: 0.78rem;
@@ -479,7 +480,7 @@ body.conteudo-animado .page-content {
             box-shadow: 0 0 8px #ff0000;
             animation: pisca-led 1s infinite;
         }
-
+ 
         @keyframes pisca-led {
             0%, 100% { opacity: 1; box-shadow: 0 0 8px #ff0000; }
             50%       { opacity: 0.2; box-shadow: none; }
@@ -541,7 +542,7 @@ body.conteudo-animado .page-content {
                 transparent 100%
             );
         }
-
+ 
         @keyframes varredura-scanner {
             0%   { top: 0%; }
             100% { top: 100%; }
@@ -556,7 +557,7 @@ body.conteudo-animado .page-content {
             z-index: 3;
             animation: pulso-alerta 2s ease-in-out infinite;
         }
-
+ 
         .scanner-alerta::before {
             content: '';
             position: absolute;
@@ -569,12 +570,12 @@ body.conteudo-animado .page-content {
             border: 1px solid rgba(255, 0, 0, 0.3);
             animation: onda-alerta 2s ease-out infinite;
         }
-
+ 
         @keyframes pulso-alerta {
             0%, 100% { opacity: 1; }
             50%       { opacity: 0.3; }
         }
-
+ 
         @keyframes onda-alerta {
             0%   { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
             100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
@@ -589,14 +590,14 @@ body.conteudo-animado .page-content {
             gap: 12px;
             background-color: #080a0f;
         }
-
+ 
         .scanner-status-texto {
             color: #00ff41;
             font-size: 0.82rem;
             letter-spacing: 2px;
             overflow: hidden;
             white-space: nowrap;
-
+ 
             animation: digitar-texto 3s steps(28, end) infinite;
             border-right: 2px solid #00ff41;
             animation-name: digitar-texto, cursor-pisca;
@@ -604,25 +605,25 @@ body.conteudo-animado .page-content {
             animation-timing-function: steps(28, end), step-end;
             animation-iteration-count: infinite, infinite;
         }
-
+ 
         @keyframes digitar-texto {
             0%   { width: 0; }
             60%  { width: 100%; }
             90%  { width: 100%; }
             100% { width: 0; }
         }
-
+ 
         @keyframes cursor-pisca {
             0%, 100% { border-right-color: #00ff41; }
             50%       { border-right-color: transparent; }
         }
-
+ 
      
         .scanner-progresso-container {
             padding: 0 20px 16px 20px;
             background-color: #080a0f;
         }
-
+ 
         .scanner-progresso-label {
             color: #64748b;
             font-size: 0.7rem;
@@ -631,7 +632,7 @@ body.conteudo-animado .page-content {
             justify-content: space-between;
             margin-bottom: 6px;
         }
-
+ 
         .scanner-barra-outer {
             width: 100%;
             height: 4px;
@@ -639,16 +640,17 @@ body.conteudo-animado .page-content {
             border-radius: 2px;
             overflow: hidden;
         }
-
+ 
         .scanner-barra-inner {
             height: 100%;
             background: linear-gradient(90deg, #ff0000, #ff6600);
             box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
             animation: preencher-barra 2.8s linear infinite;
         }
-
+ 
         @keyframes preencher-barra {
             0%   { width: 0%; }
             100% { width: 100%; }
         }
     
+ 
