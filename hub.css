@@ -469,7 +469,7 @@ input[name="depoimento-controle"] {
 background-image: url('glitch.gif');
 background-size: cover;
 }
-/*SEÇÃO FALE CONOSCO (CANAL DE COMUNICAÇÃO)*/
+/*canal de comunicacao*/
 .secao-contato {
     max-width: 1100px;
     margin: 80px auto 40px auto;
@@ -589,7 +589,7 @@ background-size: cover;
     }
 }
 
-/*RODAPÉ DO SISTEMA*/
+/*rodpé*/
 .rodape-sistema {
     width: 100%;
     text-align: center;
