@@ -90,7 +90,7 @@ body {
     }
 }
 
-/*EFEITO GLITCH / INTERFERÊNCIA CIBERNÉTICA */
+/*efeito de glitch / interferencia */
 .glitch {
     position: relative;
     display: inline-block;
@@ -138,7 +138,7 @@ body {
     100% { clip-path: inset(5% 0 88% 0); }
 }
 
-/* INTRODUÇÃO */
+/* introdução */
 .secao-hero {
     min-height: 65vh;
     display: flex;
@@ -176,7 +176,7 @@ body {
     padding: 0 10px;
 }
 
-/*HUB DE CARTÕES*/
+/*cartoes do hub*/
 .secao-hub {
     max-width: 1300px;
     margin: 0 auto;
