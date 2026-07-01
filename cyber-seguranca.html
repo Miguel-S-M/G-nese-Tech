@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyber Segurança</title>
+    <!-- Requisito: CSS externo (dois arquivos: base compartilhada + específico da página) -->
     <link rel="stylesheet" href="hub.css">
     <link rel="stylesheet" href="cyber-seguranca.css">
      <link rel="icon" href="img/icon.jpeg">
 </head>
 <body>
+    <!-- Ponto extra: overlay de introdução animado (canvas "matrix rain" + terminal),
+         controlado inteiramente por cyber-seguranca.js -->
     <div id="intro-overlay">
         <canvas id="intro-canvas"></canvas>
         <div id="intro-scanline"></div>
@@ -26,6 +29,8 @@
 
         <div id="intro-skip">[CLIQUE PARA PULAR]</div>
     </div>
+    <!-- Ponto extra: mini-animação SVG (robô perseguindo vírus) disparada ao clicar
+         no logotipo — ver dispararPerseguicao() em cyber-seguranca.js -->
     <div id="robo-chase-layer">
         <div class="robo-chase-track">
             <div class="robo-chase-virus">
@@ -81,6 +86,8 @@
 
     <div class="page-content">
         <h1>Cyber Segurança</h1>
+        <!-- Ponto extra: painel "scanner de vulnerabilidades" — efeitos e animações CSS
+             (linha de varredura, alertas piscando, barra de progresso) em cyber-seguranca.css -->
         <div class="painel-scanner">
 
             <div class="scanner-header">
@@ -195,7 +202,9 @@
         <p><a href="index.html" class="voltar-link">← VOLTAR AO HUB</a></p>
     </div>
 
+    <!-- Ponto extra: JavaScript responsável pelos efeitos desta página (intro, scanner e perseguição) -->
     <script src="cyber-seguranca.js"></script>
 
 </body>
 </html>
+ 
