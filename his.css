@@ -240,7 +240,7 @@ figcaption {
 
 
 
-/* PERSONAGENS */
+/* personagem */
 section article img[alt*="Ada"],
 section article img[alt*="Charles"],
 section article img[alt*="Alan"] {
@@ -248,7 +248,7 @@ section article img[alt*="Alan"] {
     width: 250px;
     height: 250px;
 }
-/* PERSONAGENS - TITULO */
+/* personagem-titulo */
 #per-his {
     margin-left: 100px;
     color: red;
