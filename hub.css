@@ -1,4 +1,4 @@
-/*CONFIGURAÇÕES BASE*/
+/*configurações*/
    html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
@@ -20,7 +20,7 @@ body {
     overflow-x: hidden;
 }
 
-/*MENU SUPERIOR*/
+/*menu superior*/
 .menu-superior {
     display: flex;
     justify-content: space-between;
