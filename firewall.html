@@ -8,27 +8,31 @@
     <link rel="icon" href="img/icon.jpeg">
 </head>
 <body>
-
-    <!-- menu superior -->
+ 
+    <!-- =====================================================================
+         MENU SUPERIOR
+         ===================================================================== -->
     <header class="menu-superior">
         <a href="hub.html" class="logo-reduzida" data-text="G_T">G_T</a>
         <a href="cyber-seguranca.html" class="voltar-link">← Voltar para Cyber Segurança</a>
     </header>
-
-
-    <!--section-hero-->
+ 
+ 
+    <!-- =====================================================================
+         HERO
+         ===================================================================== -->
     <section class="secao-hero">
         <div class="hero-bg-binary" id="hero-binary"></div>
-
+ 
         <div class="hero-conteudo">
             <p class="hero-eyebrow">&gt; módulo 02 — segurança de rede</p>
-
-            <!-- logo; ecudo digital-->
+ 
+            <!-- ── MINI-LOGO SVG: ESCUDO DIGITAL ─────────────────────────── -->
             <div style="display:flex; justify-content:center; margin-bottom:30px;">
                 <svg id="escudo-logo" width="90" height="100" viewBox="0 0 90 100"
                      style="cursor:pointer; transition: filter 0.3s;"
                      xmlns="http://www.w3.org/2000/svg" aria-label="Escudo digital firewall">
-
+ 
                     <!-- Grade binária de fundo -->
                     <text x="0"  y="14" font-family="Courier New" font-size="7"
                           fill="#ff0000" opacity="0.15" letter-spacing="2">10 11 01</text>
@@ -36,23 +40,23 @@
                           fill="#ff0000" opacity="0.15" letter-spacing="2">01 00 10</text>
                     <text x="58" y="55" font-family="Courier New" font-size="7"
                           fill="#00f0ff" opacity="0.10" letter-spacing="1">0101</text>
-
+ 
                     <!-- Escudo principal -->
                     <path d="M45 8 L72 20 L72 50 Q72 72 45 85 Q18 72 18 50 L18 20 Z"
                           fill="#0c1018" stroke="#ff0000" stroke-width="1.8"
                           style="filter:drop-shadow(0 0 6px rgba(255,0,0,0.5))"/>
-
+ 
                     <!-- Chama interna (firewall) -->
                     <path d="M45 30 Q50 38 47 44 Q52 40 51 48 Q55 42 52 52
                              Q57 46 54 56 Q50 64 45 66 Q40 64 36 56 Q33 46 38 52
                              Q35 42 39 48 Q38 40 43 44 Q40 38 45 30Z"
                           fill="#ff0000" opacity="0.85"
                           style="filter:drop-shadow(0 0 5px #ff0000)"/>
-
+ 
                     <!-- Barra de circuito horizontal -->
                     <line x1="18" y1="42" x2="72" y2="42"
                           stroke="#1e293b" stroke-width="1"/>
-
+ 
                     <!-- Nós de circuito -->
                     <circle cx="18" cy="42" r="2" fill="#ff0000" opacity="0.5"/>
                     <circle cx="72" cy="42" r="2" fill="#ff0000" opacity="0.5"/>
@@ -63,7 +67,7 @@
             <p class="hero-subtitulo">Barreira Digital & Controle de Tráfego de Rede</p>
         </div>
     </section>
-
+ 
     <main class="page-content">
         <section class="secao-didatica">
             <h2>// O que é um Firewall</h2>
@@ -81,7 +85,8 @@
                 ao sistema.
             </p>
             <p>Os tipos de implementação mais utilizados incluem:</p>
-
+ 
+            <!-- Ponto extra: CSS Grid organiza os ícones de tipos de firewall (impl-grid em firewall.css) -->
             <div class="impl-grid">
                 <div class="impl-item">
                     <span class="impl-icon">🖥️</span>
@@ -109,7 +114,7 @@
                 </div>
             </div>
         </section>
-
+ 
         <div class="linha-decorativa"></div>
         <section class="secao-didatica">
             <h2>// Formas de Funcionamento</h2>
@@ -217,7 +222,6 @@
                     </div>
                 </div>
             </div>
-            /*sobre*/
             <div class="comparativo-tipos">
                 <div class="tipo-card hardware">
                     <div class="tipo-header">
@@ -240,7 +244,7 @@
                         <span class="status-tag status-corporativo">Ambiente Corporativo</span>
                     </div>
                 </div>
-                /*pros*/
+ 
                 <div class="tipo-card software">
                     <div class="tipo-header">
                         <span class="tipo-icon">🖥️</span>
@@ -264,7 +268,7 @@
                 </div>
             </div>
         </section>
-        /*contras*/
+ 
         <div class="linha-decorativa"></div>
         <section class="secao-didatica">
             <h2>// Limitações do Firewall</h2>
@@ -274,7 +278,7 @@
                 restrições importantes que devem ser compreendidas para evitar uma falsa
                 sensação de segurança.
             </p>
-
+ 
             <div class="grid-limitacoes">
                 <div class="mini-card">
                     <span class="mini-tag" style="color:#ff0000">AMEAÇAS INTERNAS</span>
@@ -293,7 +297,7 @@
                     <p>Firewalls tradicionais não inspecionam conteúdo de sessões HTTPS/TLS sem configuração de inspeção SSL — ponto cego explorado por malwares modernos.</p>
                 </div>
             </div>
-
+ 
             <div class="nota-tecnica">
                 <span class="nota-prefixo">&gt;&gt; NOTA TÉCNICA //</span>
                 <p>
@@ -305,17 +309,17 @@
                 </p>
             </div>
         </section>
-
+ 
     </main>
-    
-    /*parte final*/
     <footer class="rodape-sistema">
         <p class="texto-rodape">
             © 2026 GÊNESE TECH // MÓDULO FIREWALL //
             REDE MONITORADA // ALL RIGHTS RESERVED.
         </p>
     </footer>
-
+ 
+    <!-- Ponto extra: canvas fixo em tela cheia (posicionamento não estático) usado
+         pelo efeito de partículas de fogo abaixo -->
     <canvas id="fire-canvas" style="
         position: fixed;
         top: 0; left: 0;
@@ -324,7 +328,8 @@
         z-index: 9999;
         display: none;
     "></canvas>
-
+ 
+    <!-- Ponto extra: JavaScript — gera o padrão de "0 e 1" animado no fundo do hero -->
     <script>
     (function gerarFundoBinario() {
         const el = document.getElementById('hero-binary');
@@ -342,19 +347,22 @@
         el.textContent = conteudo;
     })();
     </script>
-
+ 
     <script>
-    /*efeito de fogo do escudo */
+    /* ── EFEITO DE FOGO AO CLICAR NO ESCUDO ──────────────────────────────────
+       Ponto extra: JavaScript com efeito interativo — sistema de partículas
+       desenhado em <canvas> via requestAnimationFrame, simulando chamas que
+       sobem a partir da base da tela quando o usuário clica no logotipo SVG. */
     (function initFireEffect() {
         const escudo   = document.getElementById('escudo-logo');
         const canvas   = document.getElementById('fire-canvas');
         const ctx      = canvas.getContext('2d');
-
+ 
         let particles  = [];
         let animId     = null;
         let burning    = false;
         let burnTimer  = null;
-
+ 
         const DURATION = 4000; // ms que o fogo fica ativo
         function resizeCanvas() {
             canvas.width  = window.innerWidth;
@@ -370,12 +378,12 @@
             'rgba(200,0,0,ALPHA)',       
             'rgba(100,0,0,ALPHA)',       
         ];
-
+ 
         function randColor(alpha) {
             const c = COLORS[Math.floor(Math.random() * COLORS.length)];
             return c.replace('ALPHA', alpha.toFixed(2));
         }
-
+ 
         function spawnParticle() {
             /* Distribui nascimento em toda a base da tela */
             const x = Math.random() * canvas.width;
@@ -392,7 +400,7 @@
                 wobbleSpeed: (Math.random() - 0.5) * 0.15,
             });
         }
-
+ 
         function update() {
             for (let i = particles.length - 1; i >= 0; i--) {
                 const p = particles[i];
@@ -407,10 +415,10 @@
                 }
             }
         }
-
+ 
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+ 
             for (const p of particles) {
                 const grad = ctx.createRadialGradient(
                     p.x, p.y, 0,
@@ -419,14 +427,14 @@
                 grad.addColorStop(0,   randColor(p.life * 0.9));
                 grad.addColorStop(0.4, randColor(p.life * 0.6));
                 grad.addColorStop(1,   'rgba(0,0,0,0)');
-
+ 
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
                 ctx.fillStyle = grad;
                 ctx.fill();
             }
         }
-
+ 
         function loop() {
             /* Enquanto burning, gera ~30 partículas por frame na base */
             if (burning) {
@@ -435,7 +443,7 @@
             }
             update();
             draw();
-
+ 
             if (particles.length > 0 || burning) {
                 animId = requestAnimationFrame(loop);
             } else {
@@ -445,28 +453,28 @@
                 animId = null;
             }
         }
-
+ 
         function startFire() {
             /* Se já tiver queimando, reinicia o timer */
             if (burnTimer) clearTimeout(burnTimer);
-
+ 
             burning = true;
             canvas.style.display = 'block';
-
+ 
             /* Efeito no escudo */
             escudo.style.filter = 'drop-shadow(0 0 18px #ff4400) drop-shadow(0 0 40px #ff0000)';
-
+ 
             if (!animId) loop();
-
+ 
             burnTimer = setTimeout(() => {
                 burning = false;
                 escudo.style.filter = '';
             }, DURATION);
         }
-
+ 
         escudo.addEventListener('click', startFire);
     })();
     </script>
-
+ 
 </body>
 </html>
