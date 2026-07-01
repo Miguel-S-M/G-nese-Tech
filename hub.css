@@ -1,4 +1,5 @@
-/*configurações*/
+
+/*CONFIGURAÇÕES BASE*/
    html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
@@ -20,7 +21,8 @@ body {
     overflow-x: hidden;
 }
 
-/*menu superior*/
+/*MENU SUPERIOR*/
+/* Ponto extra: Flexbox para alinhar logo + navegação */
 .menu-superior {
     display: flex;
     justify-content: space-between;
@@ -30,6 +32,7 @@ body {
     padding: clamp(14px, 3vw, 25px) clamp(16px, 5vw, 40px);
     background-color: rgba(8, 10, 15, 0.9);
     border-bottom: 1px solid #1e293b;
+    /* Ponto extra: posicionamento não estático (fixed) — menu grudado no topo */
     position: fixed;
     width: 100%;
     top: 0;
@@ -48,7 +51,7 @@ body {
     transition: color 0.3s ease, text-shadow 0.3s ease; 
 }
 
-/* Combinando Neon + Glitch na Logo */
+/* Requisito: pseudo-classe :hover — Combinando Neon + Glitch na Logo */
 .logo-reduzida:hover {
     color: #ffffff; 
     text-shadow: 
@@ -78,6 +81,7 @@ body {
     color: #ff0000;
 }
 
+/* Ponto extra: Responsividade — media query ajusta o menu em telas pequenas */
 @media (max-width: 640px) {
     .menu-superior {
         justify-content: center;
@@ -90,7 +94,9 @@ body {
     }
 }
 
-/*efeito de glitch / interferencia */
+/*EFEITO GLITCH / INTERFERÊNCIA CIBERNÉTICA */
+/* Requisito: pseudo-elementos ::before/::after criam as "cópias" duplicadas do texto
+   Ponto extra: posicionamento não estático (position: absolute) para sobrepor as cópias */
 .glitch {
     position: relative;
     display: inline-block;
@@ -108,6 +114,8 @@ body {
     clip: rect(0, 0, 0, 0); 
 }
 
+/* Requisito: pseudo-classe :hover combinada com pseudo-elemento
+   Ponto extra: animação (@keyframes) aplicada via animation */
 .glitch:hover::before {
     left: -2px;
     text-shadow: 2px 0 #ff0055;
@@ -120,6 +128,7 @@ body {
     animation: glitch-anim-2 0.33s infinite linear alternate-reverse;
 }
 
+/* Ponto extra: @keyframes — animação personalizada do efeito glitch */
 @keyframes glitch-anim-1 {
     0% { clip-path: inset(40% 0 61% 0); }
     20% { clip-path: inset(92% 0 1% 0); }
@@ -138,7 +147,7 @@ body {
     100% { clip-path: inset(5% 0 88% 0); }
 }
 
-/* introdução */
+/* INTRODUÇÃO */
 .secao-hero {
     min-height: 65vh;
     display: flex;
@@ -176,7 +185,8 @@ body {
     padding: 0 10px;
 }
 
-/*cartoes do hub*/
+/*HUB DE CARTÕES*/
+/* Ponto extra: Flexbox — centraliza o conteúdo da seção em coluna */
 .secao-hub {
     max-width: 1300px;
     margin: 0 auto;
@@ -192,6 +202,8 @@ body {
     background: linear-gradient(90deg, transparent, #ff0000, transparent);
     margin-bottom: 60px;
 }
+/* Ponto extra: CSS Grid responsivo — auto-fit + minmax cria colunas fluidas
+   sem precisar de media query para cada breakpoint */
 .grid-monolitos {
     display: grid;
 
@@ -202,6 +214,9 @@ body {
     justify-content: center;
     gap: clamp(20px, 4vw, 35px);
 }
+/* Ponto extra: Flexbox no cartão + transition (transform) ao passar o mouse
+   Ponto extra: posicionamento não estático (relative) para servir de referência
+   aos filhos com position: absolute (imagem de fundo, borda-efeito) */
 .cartao-monolito {
     background-color: #0f131a;
     aspect-ratio: 1 / 1.4142; 
@@ -219,10 +234,13 @@ body {
     width: 100%;
 }
 
+/* Ponto extra: Responsividade — ajusta cartão em telas muito pequenas */
 @media (max-width: 480px) {
     .cartao-monolito { aspect-ratio: auto; min-height: 320px; }
 }
 
+/* Requisito: pseudo-classe :hover
+   Ponto extra: transformação (translateY) ao passar o mouse no cartão */
 @media (hover: hover) {
     .cartao-monolito:hover {
         transform: translateY(-12px);
@@ -232,6 +250,7 @@ body {
 }
 
 /* Controle da Imagem de Fundo do Cartão */
+/* Ponto extra: posicionamento não estático (absolute) para a imagem preencher o cartão */
 .cartao-img-fundo {
     position: absolute;
     top: 0; left: 0;
@@ -337,6 +356,7 @@ body {
 }
 
 /*EFEITO DE HACK NO MARCADOR SUPERIOR  */
+/* Ponto extra: @keyframes com múltiplos estágios (transform + filter + opacity) */
 @keyframes marcador-hack {
     0% {
         transform: translate(0, 0);
@@ -394,6 +414,7 @@ input[name="depoimento-controle"] {
 }
 
 /* Configuração padrão de todos os cartões (Começam invisíveis) */
+/* Ponto extra: posicionamento não estático (absolute) empilha os slides no mesmo lugar */
 .cartao-depoimento {
     position: absolute;
     top: 0;
@@ -425,6 +446,7 @@ input[name="depoimento-controle"] {
     letter-spacing: 1px;
 }
 
+/* Requisito: pseudo-classe :checked — troca o slide visível sem usar JavaScript */
 #depoimento-1:checked ~ .slider-depoimentos .item-1,
 #depoimento-2:checked ~ .slider-depoimentos .item-2,
 #depoimento-3:checked ~ .slider-depoimentos .item-3 {
@@ -469,7 +491,7 @@ input[name="depoimento-controle"] {
 background-image: url('glitch.gif');
 background-size: cover;
 }
-/*canal de comunicacao*/
+/*SEÇÃO FALE CONOSCO (CANAL DE COMUNICAÇÃO)*/
 .secao-contato {
     max-width: 1100px;
     margin: 80px auto 40px auto;
@@ -589,7 +611,7 @@ background-size: cover;
     }
 }
 
-/*rodpé*/
+/*RODAPÉ DO SISTEMA*/
 .rodape-sistema {
     width: 100%;
     text-align: center;
@@ -604,4 +626,3 @@ background-size: cover;
     font-size: 0.75rem;
     letter-spacing: 1px;
 }
-
